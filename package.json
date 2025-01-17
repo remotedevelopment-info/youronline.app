@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"publish": "cd ./build && tar cvfz cadence-crm.tar.gz . && scp cadence-crm.tar.gz nalex@sfsw.net: && ssh nalex@sfsw.net && cd .. && rm -rf build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
@@ -40,6 +41,7 @@
 		"vitest": "^2.0.4"
 	},
 	"dependencies": {
-		"@inlang/paraglide-sveltekit": "^0.11.1"
+		"@inlang/paraglide-sveltekit": "^0.11.1",
+		"@sveltejs/adapter-static": "^3.0.8"
 	}
 }

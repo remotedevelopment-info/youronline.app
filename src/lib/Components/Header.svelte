@@ -24,13 +24,12 @@
 	let { background = 'black', colour = 'white' } = $props();
 
 	/** @type {string} */
-	let logo = $state('/logo.jpeg');
+	let logo = $state('/logo.png');
 
 	/** @type {NavItem[]} */
 	const navItems = $state([
-		{ href: '/', text: 'Home' },
-		{ href: '/page/about', text: 'Make website' },
-		{ href: '/articles', text: 'Read articles' }
+		{ href: '/pricing', text: 'Pricing' },
+		{ href: '/articles', text: 'Articles' }
 	]);
 
 	/** @type {CTAButton[]} */
@@ -94,7 +93,7 @@
 
 <div bind:this={headerRef}
 	id="up"
-	class="fixed top-0 z-50 w-full"
+	class="header fixed top-0 z-50 w-full"
 	style="color: {colour}; background: {background};"
 >
 	<div class="container flex items-center justify-between">
@@ -109,9 +108,8 @@
 		</div>
 
 		<!-- Mobile Navigation Toggle -->
-		<!-- Mobile Navigation Toggle -->
 		<button
-			class="rounded-lg p-4 text-2xl hover:bg-gray-100/10 md:hidden"
+			class="rounded-lg pb-6 text-2xl hover:bg-gray-100/10 md:hidden"
 			on:click={toggleMenu}
 			aria-label="Toggle Menu"
 			aria-expanded={isMenuOpen}
@@ -119,7 +117,7 @@
 			{#if isMenuOpen}
 				<span class="text-8xl">×</span>
 			{:else}
-				<span class="text-8xl">≡</span>
+				<span class="text-8xl mt-0 mb-8 pt-0 pb-8">≡</span>
 			{/if}
 		</button>
 

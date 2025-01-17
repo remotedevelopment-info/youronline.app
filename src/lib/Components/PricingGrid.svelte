@@ -1,8 +1,6 @@
 
-<!-- src/lib/components/PricingGrid.svelte -->
 <script>
     /** @typedef {import('./PricingCard.svelte').PricingPlans} PricingPlans */
-
     /** @typedef {Object} GridProps
      * @property {string} [title='Pricing Plans']
      * @property {string} [subtitle='Choose the plan that fits your needs']

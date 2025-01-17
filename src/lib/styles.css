@@ -1,13 +1,49 @@
+
+@import url(https://fonts.bunny.net/css?family=buenard:400,700|inter:100,200,300,400,500,600,700,800,900|lato:100,100i,300,400,400i,700,700i,900|playfair:300,300i,400,400i,500,500i,600,700,800,900|sonsie-one:400);
 :root {
     --dark: #333;
 }
 
 body, main {
     @apply bg-gray-100 text-gray-900
-    dark:bg-gray-800 dark:text-gray-200;
+            dark:bg-gray-900 dark:text-gray-200;
+    font-family: 'Lato', sans-serif;
 }
 
+a {
+    @apply text-blue-500 dark:text-blue-300;
+}
 h1, h2, h3, h4, h5, h6, 
 p {
-    @apply text-gray-900 dark:text-gray-100 
+    @apply mt-2 text-gray-900 dark:text-gray-100;
+}
+
+
+h1 {
+    @apply mt-8 font-bold text-4xl md:text-2xl lg:text-4xl xl:text-5xl;
+    font-family: 'Lato', display;
+}
+h2 {
+    @apply mt-4 font-bold text-3xl md:text-xl lg:text-3xl xl:text-4xl;
+    font-family: 'Lato', sans-serif;
+}
+h3 {
+    @apply mt-2 font-bold text-2xl md:text-lg lg:text-2xl xl:text-3xl;
+    font-family: 'Lato', sans-serif;
+}
+h2.brand {
+    @apply font-bold text-2xl md:text-base lg:text-3xl xl:text-4xl;
+    font-family: 'Sonsie One', display;
+}
+h3.brand {
+    @apply font-bold text-xl md:text-base lg:text-2xl xl:text-2xl;
+    font-family: 'Lato', sans-serif;
+}
+
+button.primary {
+    @apply bg-blue-500 shadow-lg my-8 px-4 py-2 rounded-lg text-white;
+}
+
+.contain {
+    margin-top: 120px;
 }
