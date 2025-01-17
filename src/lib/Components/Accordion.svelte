@@ -37,7 +37,7 @@
 		<div
 			class="accordion-header {headerStyle} {openState ? 'opened' : 'closed'}"
 			on:click={() => toggleOpen()}
-			on:keypress={() => toggleOpen()}
+			onkeypress={() => toggleOpen()}
 		>
 			<div class="accordion-header__text">
 				<div class="accordion-header__text--header {variant}">

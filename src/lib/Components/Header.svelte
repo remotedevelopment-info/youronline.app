@@ -93,16 +93,14 @@
 
 <div bind:this={headerRef}
 	id="up"
-	class="header fixed top-0 z-50 w-full"
-	style="color: {colour}; background: {background};"
->
+	class="header fixed top-0 z-50 w-full bg-gray-300 dark:bg-gray-700">
 	<div class="container flex items-center justify-between">
 		<!-- Logo Section -->
 		<div class="flex items-center gap-2">
 			<button class="border-0 bg-transparent p-0" on:click={loadHome} data-sveltekit-reload>
 				<img src={logo} alt="logo" class="logo" />
 			</button>
-			<div class="logo-group-text">
+			<div class="logo-group-text ml-2 md:ml-3 lg:ml-4">
 				<slot />
 			</div>
 		</div>

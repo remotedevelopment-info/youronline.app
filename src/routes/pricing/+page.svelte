@@ -24,7 +24,7 @@
                 Press the Start now button, send a message with your email and 
                 we will activate your FREE account.
             </p>
-            <button class="primary" onclick={()=>goto('/page/action')}>Start now</button>
+            <button class="primary" on:click={()=>goto('/page/action')}>Start now</button>
         </div>
 	</div>
 </section>
