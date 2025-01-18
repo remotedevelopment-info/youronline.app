@@ -53,7 +53,7 @@
     </div>
 
     {#if footer}
-        <div class="mx-4 py-12">
+        <div class="pb-12">
             <slot />
         </div>
     {/if}

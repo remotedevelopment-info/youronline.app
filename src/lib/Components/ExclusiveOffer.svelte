@@ -2,7 +2,7 @@
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
     
-    let timeLeft = 0;
+    let timeLeft = 400;
     let days, hours, minutes, seconds;
     let dealShown = false;
     

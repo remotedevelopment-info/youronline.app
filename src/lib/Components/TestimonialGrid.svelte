@@ -18,7 +18,7 @@
     } = $props();
 </script>
 
-<section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+<article class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12" in:fade>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -38,4 +38,4 @@
             {/each}
         </div>
     </div>
-</section>
+</article>

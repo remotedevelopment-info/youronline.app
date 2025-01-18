@@ -91,9 +91,7 @@
 
 <!-- Rest of the template remains the same -->
 
-<div bind:this={headerRef}
-	id="up"
-	class="header fixed top-0 z-50 w-full bg-gray-300 dark:bg-gray-700">
+<div bind:this={headerRef} id="up" class="header fixed top-0 z-50 w-full bg-gray-300 dark:bg-gray-700">
 	<div class="container flex items-center justify-between">
 		<!-- Logo Section -->
 		<div class="flex items-center gap-2">

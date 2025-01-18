@@ -5,99 +5,89 @@
 	import PricingGrid from '$lib/Components/PricingGrid.svelte';
 	import Contact from '$lib/Components/Contact.svelte';
 	import ExclusiveOffer from '$lib/Components/ExclusiveOffer.svelte';
+	import SpecialOffer from '$lib/Components/SpecialOffer.svelte';
+	import AnimatedScroll from '$lib/Components/AnimatedScroll.svelte';
 	import { testimonialData } from '$lib/data/testimonials.js';
 	import { pricingPlans } from '$lib/data/pricing.js';
 </script>
 
 <div>
 	<section>
-		<div class="cover">
-			<!-- Hero component ... Split layout with image on right -->
-			<Hero
-				image="/images/modern-workspace.jpeg"
-				h1="Do you need to sell more?"
-				h2="The secret is to contact and connect"
-				slogan="Convert your prospects into customers"
-				layout="split"
-				showScroll={false}
-			/>
-		</div>
+		<!-- Hero component ... Split layout with image on right -->
+		<Hero
+			image="/images/before-after.jpeg"
+			h1="Need to sell more?"
+			h2="The secret is to contact and connect!"
+			slogan="Convert your prospects into customers."
+			content="It takes consistent commumnication to drive demand for your business."
+			layout="split"
+			slotted='Imagine a stream of customers buying from your business regularly. You know you have to do the
+			work, but how do you keep track and maintain contact with a lot of prospects?' />
+	<AnimatedScroll />
+	
 	</section>
-
 	<!-- Features Section -->
-	<section class="bg-gray-50 py-16 md:py-24 dark:bg-gray-900">
-		<div class="container mx-auto px-4">
-			<!-- Features component -->
-			<Feature format="double" background="var(--navy)" foreground="var(--white)">
-				<svelte:fragment slot="header">Our Platform</svelte:fragment>
+	<section>
+		<!-- Features component -->
+		<Feature format="double" background="var(--navy)" foreground="var(--white)">
+			<svelte:fragment slot="header">Our Platform</svelte:fragment>
 
-				<svelte:fragment slot="left">
-					<img src="/images/at-desk.jpeg" alt="Feature demonstration" />
-				</svelte:fragment>
+			<svelte:fragment slot="left">
+				<img src="/images/at-desk.jpeg" alt="Feature demonstration" />
+			</svelte:fragment>
 
-				<svelte:fragment slot="right">
-					<div class="text-2xl text-gray-900 dark:text-gray-100">
-						<h3>Get more sales every day</h3>
-						<p class="text-2xl text-gray-900 dark:text-gray-100">
-							<strong>Cadence CRM</strong> is a Customer Relationship Management tool to help you quickly
-							process your prospects and develop then into customers, inviting them to events both online
-							and in person.
-						</p>
-						<p>
-							The emphasis is on speed of use. While you are contacting your customers, take notes,
-							send messages and with press button simplicity <strong>Cadence CRM</strong> records what
-							you do. Our unique AI engine provides a natural flow of deal progression.
-						</p>
-					</div>
-				</svelte:fragment>
-
-				<svelte:fragment>
-					Easy to use intuitive workflows that help with contacting your people without the
-					complexity.
-				</svelte:fragment>
-			</Feature>
-		</div>
+			<svelte:fragment slot="right">
+				<div class="text-2xl text-gray-900 dark:text-gray-100">
+					<h3>Get more sales every day</h3>
+					<p class="text-2xl text-gray-900 dark:text-gray-100">
+						<strong>Cadence CRM</strong> is a Customer Relationship Management tool to help you efficiently
+						manage your prospects connections to develop them into customers. It is designed for the
+						modern entreprenur, coach or business that gets it. Contact needs to be tracked and measured.
+					</p>
+					<p>
+						<strong>Cadence CRM</strong> also helps you manage your online and in person events. This
+						is now an essential tool to grow your business.
+					</p>
+					<p>
+						The emphasis is on speed and simplicity. While you are contacting your customers, take
+						notes, send email messages with press button simplicity <strong>Cadence CRM</strong> records
+						what you do.
+					</p>
+					<p>Our unique AI engine provides a natural flow of deal progression.</p>
+				</div>
+			</svelte:fragment>
+			<svelte:fragment>
+				Easy to use intuitive workflows that help with contacting your people without the
+				complexity.
+			</svelte:fragment>
+		</Feature>
 	</section>
 
 	<!-- Testimonials Section -->
-	<section class="py-16 md:py-24">
-		<div class="container mx-auto px-4">
-			<!-- Testimonials component -->
+	<section id="testimonials">
+		<!-- Testimonials component -->
 
-			<TestimonialGrid
-				testimonials={testimonialData}
-				title="Success Stories"
-				subtitle="See how businesses are orchestrating their success with Cadence CRM"
-			/>
-		</div>
+		<TestimonialGrid
+			testimonials={testimonialData}
+			title="Success Stories"
+			subtitle="See how businesses are orchestrating their success with Cadence CRM"
+		/>
 	</section>
 
 	<!-- CTA Section with Product Grid -->
-	<section class="bg-gray-50 py-16 md:py-24 dark:bg-gray-900">
-		<div class="container mx-auto px-4">
-			<!-- CTA Header -->
-			<div class="mb-16">
-				<!-- CTA component -->
-			</div>
-
-			<!-- Product Grid -->
-			<div class="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1">
-				<!-- Product cards will be mapped here -->
-				<PricingGrid plans={pricingPlans} />
-			</div>
-		</div>
+	<section class="bg-gray-50 dark:bg-gray-900">
+		<!-- Product cards will be mapped here -->
+		<PricingGrid plans={pricingPlans} />
+		<SpecialOffer />
 	</section>
 
 	<!-- Contact Section -->
 	<section class="py-16 md:py-24">
-		<div class="container mx-auto px-4">
-			<Contact />
-		</div>
+		<Contact />
 	</section>
+
 	<section class="py-16 md:py-24">
-		<div class="container mx-auto px-4">
-			<ExclusiveOffer />
-		</div>
+		<ExclusiveOffer />
 	</section>
 </div>
 

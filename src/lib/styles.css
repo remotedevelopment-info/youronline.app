@@ -1,13 +1,38 @@
+@import url(https://fonts.bunny.net/css?family=lato:100,100i,300,400,400i,700,700i,900|oswald:300,400,500,600|sonsie-one:400);
 
-@import url(https://fonts.bunny.net/css?family=buenard:400,700|inter:100,200,300,400,500,600,700,800,900|lato:100,100i,300,400,400i,700,700i,900|playfair:300,300i,400,400i,500,500i,600,700,800,900|sonsie-one:400);
 :root {
     --dark: #333;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-family: 'Oswald', serif;
+    font-size: 80px;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+}
+h2.brand {
+    @apply font-bold text-3xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl;
+    font-family: 'Sonsie One', display;
+}
+h3.brand {
+    @apply font-bold text-xl md:text-base lg:text-2xl xl:text-2xl;
+    font-family: 'Lato', display;
+}
+
+
 body, main {
     @apply bg-gray-100 text-gray-900
             dark:bg-gray-900 dark:text-gray-200;
-    font-family: 'Lato', sans-serif;
+}
+
+section {
+    @apply mt-8 mb-12;
 }
 
 a {
@@ -21,24 +46,16 @@ p {
 
 h1 {
     @apply mt-8 font-bold text-4xl md:text-2xl lg:text-4xl xl:text-5xl;
-    font-family: 'Lato', display;
 }
 h2 {
     @apply mt-4 font-bold text-3xl md:text-xl lg:text-3xl xl:text-4xl;
-    font-family: 'Lato', sans-serif;
+
 }
 h3 {
     @apply mt-2 font-bold text-2xl md:text-lg lg:text-2xl xl:text-3xl;
-    font-family: 'Lato', sans-serif;
+
 }
-h2.brand {
-    @apply font-bold text-2xl md:text-base lg:text-3xl xl:text-4xl;
-    font-family: 'Sonsie One', display;
-}
-h3.brand {
-    @apply font-bold text-xl md:text-base lg:text-2xl xl:text-2xl;
-    font-family: 'Lato', sans-serif;
-}
+
 
 button.primary {
     @apply bg-blue-500 shadow-lg my-8 px-4 py-2 rounded-lg text-white;
