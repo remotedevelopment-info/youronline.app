@@ -1,8 +1,8 @@
 <script>
-    import { onMount } from 'svelte';
-    import { slide } from 'svelte/transition';
-    import { goto } from '$app/navigation';
-    import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
+	import { slide } from 'svelte/transition';
+	import { goto } from '$app/navigation';
+	import { browser } from '$app/environment';
 
 	/** @typedef {Object} NavItem
 	 * @property {string} href
@@ -25,6 +25,8 @@
 
 	/** @type {string} */
 	let logo = $state('/logo.png');
+	let theme = $state('default');
+	let isDark = $state(false);
 
 	/** @type {NavItem[]} */
 	const navItems = $state([
@@ -67,7 +69,30 @@
 		isMenuOpen = !isMenuOpen;
 	}
 
+	function toggleDarkMode() {
+		isDark = !isDark;
+		document.documentElement.classList.toggle('dark');
+	}
+
+	// If you want to check system preference on load
+	function checkDarkMode() {
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.add('dark');
+			isDark = true;
+		}
+	}
+
+	/**
+	 * @param {string} newTheme
+	 */
+	function switchTheme(newTheme) {
+		theme = newTheme;
+		document.documentElement.setAttribute('data-theme', newTheme);
+	}
+
 	onMount(() => {
+		checkDarkMode();
+		document.documentElement.setAttribute('data-theme', theme);
 		/**
 		 * Handles clicks outside the header
 		 * @param {MouseEvent} event
@@ -91,7 +116,16 @@
 
 <!-- Rest of the template remains the same -->
 
-<div bind:this={headerRef} id="up" class="header fixed top-0 z-50 w-full bg-gray-300 dark:bg-gray-700">
+<div
+	bind:this={headerRef}
+	id="up"
+	class="header border-brand-300 from-brand-300 to-brand-100 dark:border-brand-700
+		dark:from-brand-700
+		dark:to-brand-900
+		fixed top-0 z-50
+		w-full
+		border-b bg-gradient-to-b"
+>
 	<div class="container flex items-center justify-between">
 		<!-- Logo Section -->
 		<div class="flex items-center gap-2">
@@ -101,11 +135,83 @@
 			<div class="logo-group-text ml-2 md:ml-3 lg:ml-4">
 				<slot />
 			</div>
+			<div class="flex min-w-24 items-start justify-center gap-1 text-xs">
+				<!-- <button on:click={() => toggleTheme()}>
+					{theme === 'blue' ? 'Blue' : 'Purple'}
+				</button> -->
+				<button
+					on:click={() => switchTheme('purple')}
+					class="h-5 w-5 rounded-full transition-all hover:ring-2 hover:ring-offset-2 {theme ===
+					'purple'
+						? 'ring-2 ring-offset-2'
+						: ''}"
+				>
+					<svg viewBox="0 0 20 20" class="h-5 w-5">
+						<circle cx="10" cy="10" r="8" fill="#7C3AED" />
+						<!-- Purple -->
+					</svg>
+				</button>
+
+				<button
+					on:click={() => switchTheme('blue')}
+					class="h-5 w-5 rounded-full transition-all hover:ring-2 hover:ring-offset-2 {theme ===
+					'blue'
+						? 'ring-2 ring-offset-2'
+						: ''}"
+				>
+					<svg viewBox="0 0 20 20" class="h-5 w-5">
+						<circle cx="10" cy="10" r="8" fill="#2563EB" />
+						<!-- Blue -->
+					</svg>
+				</button>
+
+				<button
+					on:click={() => switchTheme('green')}
+					class="h-5 w-5 rounded-full transition-all hover:ring-2 hover:ring-offset-2 {theme ===
+					'green'
+						? 'ring-2 ring-offset-2'
+						: ''}"
+				>
+					<svg viewBox="0 0 20 20" class="h-5 w-5">
+						<circle cx="10" cy="10" r="8" fill="#059669" />
+						<!-- Green -->
+					</svg>
+				</button>
+
+				<button
+					on:click={() => switchTheme('orange')}
+					class="h-5 w-5 rounded-full transition-all hover:ring-2 hover:ring-offset-2 {theme ===
+					'orange'
+						? 'ring-2 ring-offset-2'
+						: ''}"
+				>
+					<svg viewBox="0 0 20 20" class="h-5 w-5">
+						<circle cx="10" cy="10" r="8" fill="#EA580C" />
+						<!-- Orange -->
+					</svg>
+				</button>
+
+				<button
+					on:click={() => switchTheme('red')}
+					class="h-5 w-5 rounded-full transition-all hover:ring-2 hover:ring-offset-2 {theme ===
+					'red'
+						? 'ring-2 ring-offset-2'
+						: ''}"
+				>
+					<svg viewBox="0 0 20 20" class="h-5 w-5">
+						<circle cx="10" cy="10" r="8" fill="#DC2626" />
+						<!-- Red -->
+					</svg>
+				</button>
+				<button on:click={() => toggleDarkMode()}>
+					{isDark === false ? '☀️' : '🌙'}
+				</button>
+			</div>
 		</div>
 
 		<!-- Mobile Navigation Toggle -->
 		<button
-			class="rounded-lg pb-6 text-2xl hover:bg-gray-100/10 md:hidden"
+			class="hover:bg-brand-100/10 rounded-lg pb-6 text-2xl md:hidden"
 			on:click={toggleMenu}
 			aria-label="Toggle Menu"
 			aria-expanded={isMenuOpen}
@@ -113,7 +219,7 @@
 			{#if isMenuOpen}
 				<span class="text-8xl">×</span>
 			{:else}
-				<span class="text-8xl mt-0 mb-8 pt-0 pb-8">≡</span>
+				<span class="mb-8 mt-0 pb-8 pt-0 text-8xl">≡</span>
 			{/if}
 		</button>
 
@@ -124,7 +230,7 @@
 					<li>
 						<a
 							href={item.href}
-							class="text-current transition-colors hover:text-gray-300"
+							class="hover:text-brand-300 text-current transition-colors"
 							on:click={() => (isMenuOpen = false)}
 						>
 							{item.text}
@@ -149,14 +255,18 @@
 
 		<!-- Mobile Navigation Menu -->
 		{#if isMenuOpen}
-			<div class="absolute left-0 top-full w-full bg-gray-900 md:hidden" on:click|stopPropagation transition:slide={{ duration: 300 }}>
+			<div
+				class="bg-brand-900 absolute left-0 top-full w-full md:hidden"
+				on:click|stopPropagation
+				transition:slide={{ duration: 300 }}
+			>
 				<nav class="container mx-auto px-6 py-4">
 					<ul class="flex flex-col gap-4">
 						{#each navItems as item}
 							<li>
 								<a
 									href={item.href}
-									class="block text-lg text-current transition-colors hover:text-gray-300"
+									class="hover:text-brand-300 block text-lg text-current transition-colors"
 									on:click={() => (isMenuOpen = false)}
 								>
 									{item.text}
@@ -193,7 +303,7 @@
 	}
 
 	.button.cta.inverse {
-		@apply border-2 border-current bg-transparent hover:bg-gray-100/10;
+		@apply hover:bg-brand-100/10 border-2 border-current bg-transparent;
 	}
 
 	.logo {

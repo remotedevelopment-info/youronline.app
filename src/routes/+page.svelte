@@ -21,10 +21,10 @@
 			slogan="Convert your prospects into customers."
 			content="It takes consistent commumnication to drive demand for your business."
 			layout="split"
-			slotted='Imagine a stream of customers buying from your business regularly. You know you have to do the
-			work, but how do you keep track and maintain contact with a lot of prospects?' />
-	<AnimatedScroll />
-	
+			slotted="Imagine a stream of customers buying from your business regularly. You know you have to do the
+			work, but how do you keep track and maintain contact with a lot of prospects?"
+		/>
+		<AnimatedScroll />
 	</section>
 	<!-- Features Section -->
 	<section>

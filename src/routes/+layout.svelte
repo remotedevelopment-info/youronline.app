@@ -21,10 +21,5 @@
 			</ParaglideJS>
 		</section>
 	</main>
-
-	<footer class="bg-gray-900 py-12 text-white">
-		<div class="container mx-auto px-4">
-			<Footer />
-		</div>
-	</footer>
+	<Footer />
 </div>
