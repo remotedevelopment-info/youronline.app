@@ -24,7 +24,7 @@
     );
 </script>
 
-<div class="flex flex-col items-center box-border p-0 m-0 overflow-auto break-words w-full
+<div class="flex flex-col min-h-[calc(100vh-140px)] items-center box-border p-0 m-0 overflow-auto break-words w-full
             bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
 
     {#if header}

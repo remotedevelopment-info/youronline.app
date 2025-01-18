@@ -25,7 +25,7 @@
 </script>
 
 <article
-	class="relative flex min-h-[calc(100vh-72px)] items-center
+	class="relative flex min-h-[calc(100vh-120px)] items-center
            {layout === 'split' ? 'overflow-hidden bg-gray-50 dark:bg-gray-900' : ''}"
 	class:bg-cover={layout === 'full'}
 	class:bg-center={layout === 'full'}

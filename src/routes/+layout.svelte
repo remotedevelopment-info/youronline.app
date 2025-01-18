@@ -15,11 +15,9 @@
 		<h3 class="brand">Your Sales require your attention</h3>
 	</Header>
 	<main class="flex-grow">
-		<section class="pb-16 md:pb-24">
-			<ParaglideJS {i18n}>
-				{@render children()}
-			</ParaglideJS>
-		</section>
+		<ParaglideJS {i18n}>
+			{@render children()}
+		</ParaglideJS>
 	</main>
 	<Footer />
 </div>

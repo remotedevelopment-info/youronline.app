@@ -1,11 +1,11 @@
 <script>
 	import { browser } from '$app/environment';
-    let next = $props();
+    let { next } = $props();
     console.log(next);
 	let hasScrolled = $state(false);
 
 	function scrollToNext() {
-		const nextSection = document.querySelector('section:nth-of-type(2)');
+		const nextSection = document.querySelector('section#' + next);
 		if (nextSection) {
 			nextSection.scrollIntoView({ behavior: 'smooth' });
 		}
@@ -18,7 +18,7 @@
 </script>
 
 <button
-	class="relative bottom-8 left-1/2 -translate-x-1/2 text-white opacity-80
+	class="relative bottom-8 left-1/2 -translate-x-1/2 text-black dark:text-white opacity-80
        transition-all duration-300 hover:opacity-100
        {hasScrolled ? 'opacity-0' : ''}"
 	on:click={scrollToNext}

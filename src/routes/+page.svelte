@@ -12,7 +12,7 @@
 </script>
 
 <div>
-	<section>
+	<section id="hero">
 		<!-- Hero component ... Split layout with image on right -->
 		<Hero
 			image="/images/before-after.jpeg"
@@ -24,10 +24,11 @@
 			slotted="Imagine a stream of customers buying from your business regularly. You know you have to do the
 			work, but how do you keep track and maintain contact with a lot of prospects?"
 		/>
-		<AnimatedScroll />
+		<AnimatedScroll next="feature"/>
 	</section>
+
 	<!-- Features Section -->
-	<section>
+	<section id="feature">
 		<!-- Features component -->
 		<Feature format="double" background="var(--navy)" foreground="var(--white)">
 			<svelte:fragment slot="header">Our Platform</svelte:fragment>
@@ -61,6 +62,7 @@
 				complexity.
 			</svelte:fragment>
 		</Feature>
+		<AnimatedScroll next="testimonials"/>
 	</section>
 
 	<!-- Testimonials Section -->
@@ -75,18 +77,17 @@
 	</section>
 
 	<!-- CTA Section with Product Grid -->
-	<section class="bg-gray-50 dark:bg-gray-900">
-		<!-- Product cards will be mapped here -->
+	<section id="pricing">
 		<PricingGrid plans={pricingPlans} />
 		<SpecialOffer />
 	</section>
 
 	<!-- Contact Section -->
-	<section class="py-16 md:py-24">
+	<section id="contact">
 		<Contact />
 	</section>
 
-	<section class="py-16 md:py-24">
+	<section id="exclusive">
 		<ExclusiveOffer />
 	</section>
 </div>

@@ -232,11 +232,11 @@ h3.brand {
 
 body,
 main {
-    @apply bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-200;
+    @apply bg-brand-100 dark:bg-brand-950 text-gray-800 dark:text-gray-200;
 }
 
 section {
-    @apply mt-8 mb-12;
+    @apply mb-12 pt-12;
 }
 
 a {
