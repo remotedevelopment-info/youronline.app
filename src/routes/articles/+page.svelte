@@ -2,8 +2,6 @@
     import { articles } from '$lib/articles.js';
     import { pageState } from '$lib/states/pageState.svelte.js';
 
-    console.log(articles);
-
     pageState.title = 'Articles';
     pageState.strapline = 'Read all about it';
 

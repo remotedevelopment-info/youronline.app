@@ -11,8 +11,8 @@
 <div class="flex min-h-screen flex-col">
 	<!-- Header Area -->
 	<Header>
-		<h2 class="brand">Cadence-CRM</h2>
-		<h3 class="brand">Your Sales require your attention</h3>
+		<h2 class="brand">YourOnline</h2>
+		<h3 class="brand">Your Business online FAST</h3>
 	</Header>
 	<main class="flex-grow">
 		<ParaglideJS {i18n}>

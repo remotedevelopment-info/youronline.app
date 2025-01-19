@@ -13,7 +13,6 @@
 	currentPage.subscribe((value) => {
 		if (value && value.title === id.toLowerCase()) {
 			openState = true;
-			console.log('currentPage is now ', value);
 		}
 	});
 

@@ -11,11 +11,15 @@
 	<div class="offer-badge">Special Offer</div>
 	<h2>{title}</h2>
 	<div class="flex w-full flex-col items-center justify-center border-solid">
-		<h3 class="text-4xl">Free Access</h3>
+		<h3 class="text-4xl">No special offer</h3>
 		<p>
-			Our pricing plans will become available for online subscription on 1st February 2025, in the
-			meantime you can access Cadence-CRM for FREE. Press the Start now button, send a message with
-			your email and we will activate your FREE account.
+			We are not running a special offer at this time.
+			As we start with a free site, what more do you need?
+			We will only do this until we have a full schedule,
+			so start today if you know what you want.
+		</p>
+		<p>
+			If you are unsure, let's chat.
 		</p>
 		<button class="primary" on:click={() => goto('/page/action')}>Start now</button>
 	</div>

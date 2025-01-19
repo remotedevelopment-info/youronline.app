@@ -1,4 +1,4 @@
-@import url(https://fonts.bunny.net/css?family=lato:100,100i,300,400,400i,700,700i,900|oswald:300,400,500,600|sonsie-one:400);
+@import url(https://fonts.bunny.net/css?family=abyssinica-sil:400|lato:100,100i,300,400,400i,700,700i,900|oswald:300,400,500,600|sonsie-one:400);
 
 :root {
     /* Default Purple Palette */
@@ -220,13 +220,13 @@ h6 {
 }
 
 h2.brand {
-    @apply font-bold text-3xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl;
-    font-family: 'Sonsie One', display;
+    @apply font-bold text-4xl sm:text-4xl md:text-3xl lg:text-5xl xl:text-6xl;
+    font-family: 'Abyssinica SIL', serif;
 }
 
 h3.brand {
     @apply font-bold text-xl md:text-base lg:text-2xl xl:text-2xl;
-    font-family: 'Lato', display;
+    font-family: 'Oswald', display;
 }
 
 
@@ -236,7 +236,56 @@ main {
 }
 
 section {
-    @apply mb-12 pt-12;
+    @apply mt-24 py-8 md:py-12 lg:py-24;
+}
+section>.page-content {
+    @apply mx-auto px-4 container;
+}
+
+article {
+    @apply mt-4 prose prose-lg;
+}
+
+.terms {
+    font-size: 0.8rem;
+    ol {
+        list-style-type: decimal;
+        @apply ml-4;
+    }
+
+    ol li {
+        @apply my-4 text-sm;
+    }
+
+    /* Second level */
+    ol li ol {
+        list-style-type: lower-alpha;
+        @apply my-2 ml-6;
+    }
+
+    ol li ol li {
+        @apply my-2;
+    }
+
+    /* Third level */
+    ol li ol li ol {
+        list-style-type: lower-roman;
+        @apply my-2 ml-8;
+    }
+
+    ol li ol li ol li {
+        @apply my-2;
+    }
+
+    /* Fourth level */
+    ol li ol li ol li ol {
+        list-style-type: decimal;
+        @apply my-2 ml-10;
+    }
+
+    ol li ol li ol li ol li {
+        @apply my-2;
+    }
 }
 
 a {

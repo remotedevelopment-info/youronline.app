@@ -7,6 +7,7 @@
 
     /** @typedef {Object} PricingProps
      * @property {string} title - Plan name
+     * @property {string} link - Plan link
      * @property {number} price - Monthly price
      * @property {Feature[]} features - Array of features
      * @property {boolean} [isPopular=false] - Whether this is the popular plan
@@ -17,7 +18,8 @@
 
     /** @type {PricingProps} */
     let { 
-        title, 
+        title,
+        link,
         price, 
         features,
         isPopular = false,
@@ -40,6 +42,7 @@
 
     <div class="mb-8">
         <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+        <p><a href="{link}">More info</a></p>
         <div class="flex items-baseline mb-4">
             <span class="text-4xl font-bold text-gray-900 dark:text-white">${price}</span>
             <span class="text-gray-500 dark:text-gray-400">/{period}</span>

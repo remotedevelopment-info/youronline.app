@@ -56,10 +56,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <h2 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
-          Let's Start Your Business Rhythm
+          Send your questions and enquiries 
         </h2>
         <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Contact us to discover how Cadence CRM can orchestrate your success
+          We'll get back to you as soon as possible.
         </p>
       </div>
       

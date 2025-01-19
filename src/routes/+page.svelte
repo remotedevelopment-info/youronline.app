@@ -15,14 +15,13 @@
 	<section id="hero">
 		<!-- Hero component ... Split layout with image on right -->
 		<Hero
-			image="/images/before-after.jpeg"
-			h1="Need to sell more?"
-			h2="The secret is to contact and connect!"
-			slogan="Convert your prospects into customers."
-			content="It takes consistent commumnication to drive demand for your business."
+			image="/images/person1.jpeg"
+			h1="Your Business ONLINE"
+			h2="FREE Website Development?"
+			slogan="YourOnline offers you a website build. For FREE."
+			content="Yes, there are terms and conditions. You must subscribe to 3 months of hosting on our fast cloud server or have an active subscription to Cadence-CRM."
 			layout="split"
-			slotted="Imagine a stream of customers buying from your business regularly. You know you have to do the
-			work, but how do you keep track and maintain contact with a lot of prospects?"
+			slotted="Imagine your business can be online today or this week (if we are busy)."
 		/>
 		<AnimatedScroll next="feature"/>
 	</section>
@@ -41,25 +40,21 @@
 				<div class="text-2xl text-gray-900 dark:text-gray-100">
 					<h3>Get more sales every day</h3>
 					<p class="text-2xl text-gray-900 dark:text-gray-100">
-						<strong>Cadence CRM</strong> is a Customer Relationship Management tool to help you efficiently
-						manage your prospects connections to develop them into customers. It is designed for the
-						modern entreprenur, coach or business that gets it. Contact needs to be tracked and measured.
+						<strong>YourOnline</strong> a FAST site template using modern technology to render
+						your content very efficiently.
 					</p>
 					<p>
-						<strong>Cadence CRM</strong> also helps you manage your online and in person events. This
-						is now an essential tool to grow your business.
+						You can collect information from simple to build forms, connect your Cadence-CRM to the 
+						site and sort our your online presence quickly. A minimum of effort.
 					</p>
 					<p>
-						The emphasis is on speed and simplicity. While you are contacting your customers, take
-						notes, send email messages with press button simplicity <strong>Cadence CRM</strong> records
-						what you do.
+						Your YourOnline site is a "frontend" site that can publish your events and take bookings.
+						With Cadence-CRM integration, your new prospects can signup to your newsletter and you can send them emails from the CRM.
 					</p>
-					<p>Our unique AI engine provides a natural flow of deal progression.</p>
 				</div>
 			</svelte:fragment>
 			<svelte:fragment>
-				Easy to use intuitive workflows that help with contacting your people without the
-				complexity.
+				Get your site build started
 			</svelte:fragment>
 		</Feature>
 		<AnimatedScroll next="testimonials"/>

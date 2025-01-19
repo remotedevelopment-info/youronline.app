@@ -25,6 +25,7 @@
         product: [
             { text: 'Features', href: '/#features' },
             { text: 'Pricing', href: '/pricing' },
+            { text: 'Articles', href: '/articles' },
             { text: 'Success Stories', href: '/#testimonials' }
         ],
         company: [
@@ -37,9 +38,9 @@
 
         ],
         support: [
-            { text: 'Articles', href: '/articles' },
             { text: 'Contact', href: '/contact' },
-            { text: 'Privacy Policy', href: '/privacy' }
+            { text: 'Terms and Conditions', href: '/articles/terms-conditions' },
+            { text: 'Privacy Policy', href: '/articles/privacy-policy' }
         ]
     };
 </script>

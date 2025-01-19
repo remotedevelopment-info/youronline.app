@@ -24,7 +24,7 @@
     let { background = 'black', colour = 'white' } = $props();
 
     /** @type {string} */
-    let logo = $state('/logo.png');
+    let logo = $state('/bwlogo-h.jpeg');
     let isDark = $state(false);
 
     /** @type {NavItem[]} */
@@ -78,7 +78,6 @@
             document.documentElement.classList.add('dark');
             isDark = true;
         }
-
         /**
          * Handles clicks outside the header
          * @param {MouseEvent} event
@@ -222,13 +221,20 @@
     }
 
     .logo {
-        width: 140px;
-        height: 160px;
+        width: 180px;
+        height: 140px;
     }
     @media (min-width: 768px) {
         .logo {
-            width: 100px;
+            width: 150px;
             height: 120px;
         }
     }
+    @media (min-width: 1024px) {
+        .logo {
+            width: 160px;
+            height: 120px;
+        }
+    }
+
 </style>

@@ -1,7 +1,6 @@
 <script>
 	import { browser } from '$app/environment';
     let { next } = $props();
-    console.log(next);
 	let hasScrolled = $state(false);
 
 	function scrollToNext() {
