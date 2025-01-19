@@ -10,7 +10,8 @@
     let error = null;
   
     const API_URL = 'https://api.youronline.app/api/contact';
-    //  for localhost testing: const API_URL = 'http://localhost:8001/api/contact';
+    //  for localhost testing: 
+    //  const API_URL = 'http://localhost:8001/api/contact';
     
     const handleSubmit = async () => {
       isLoading = true;

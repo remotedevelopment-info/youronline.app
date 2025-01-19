@@ -236,15 +236,15 @@ main {
 }
 
 section {
-    @apply mt-24 py-8 md:py-12 lg:py-24;
+    @apply my-8 md:py-12;
 }
 section>.page-content {
     @apply mx-auto px-4 container;
 }
 
 article {
-    @apply mt-4 prose prose-lg;
-}
+    @apply mt-4;
+} 
 
 .terms {
     font-size: 0.8rem;
