@@ -19,6 +19,7 @@
 <h1>{m.hello_world({ name: 'SvelteKit User' })}</h1>
 <div>
 	<button on:click={() => switchToLanguage('en')}>en</button>
+	<a href="/demo">Back</a>
 </div>
 
 

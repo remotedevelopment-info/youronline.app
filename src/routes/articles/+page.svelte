@@ -3,7 +3,7 @@
     import { pageState } from '$lib/states/pageState.svelte.js';
 
     pageState.title = 'Articles';
-    pageState.strapline = 'Read all about it';
+    pageState.strapline = 'Our blog';
 
     const showDates = $state(true);
     let sorted = articles;
@@ -52,7 +52,6 @@
         return `${month} ${day}, ${year}`;
     }
 </script>
-
 <div class="contain">
 	<ul class="article-list">
 		<li class="article">

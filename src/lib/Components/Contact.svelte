@@ -16,6 +16,7 @@
     const handleSubmit = async () => {
       isLoading = true;
       error = null;
+      const source = 'YourOnline.app Contact Form';
       
       try {
         const response = await fetch(API_URL, {
@@ -27,7 +28,8 @@
             first_name,
             last_name,
             email,
-            message
+            message,
+            source
           })
         });
   
@@ -60,7 +62,7 @@
           Send your questions and enquiries 
         </h2>
         <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          We'll get back to you as soon as possible.
+          We'll get back to you shortly.
         </p>
       </div>
       
@@ -122,6 +124,8 @@
             </button>
           </div>
         </form>
+
+        <p>Alternatively, email <a href="mailto:work@sfsw.net">Nicholas</a> and we will get you setup.</p>
         
         {#if submitted}
           <div

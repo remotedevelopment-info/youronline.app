@@ -26,6 +26,7 @@
     /** @type {string} */
     let logo = $state('/bwlogo-h.jpeg');
     let isDark = $state(false);
+    let isMenuOpen = $state(false);
 
     /** @type {NavItem[]} */
     const navItems = $state([
@@ -41,7 +42,6 @@
 
     /** @type {HTMLElement | null} */
     let headerRef;
-    let isMenuOpen = $state(false);
 
     /**
      * Loads home page and sets template properties
@@ -78,6 +78,7 @@
             document.documentElement.classList.add('dark');
             isDark = true;
         }
+
         /**
          * Handles clicks outside the header
          * @param {MouseEvent} event
@@ -105,20 +106,20 @@
     class="header border-brand-300 from-brand-300 to-brand-100 dark:border-brand-700
         dark:from-brand-700
         dark:to-brand-900
-        fixed top-0 z-50
+        top-0 z-50
         w-full
         border-b bg-gradient-to-b"
 >
     <div class="container flex items-center justify-between">
         <!-- Logo Section -->
         <div class="flex items-center gap-2">
-            <button class="border-0 bg-transparent p-0" on:click={loadHome} data-sveltekit-reload>
+            <button class="border-0 bg-transparent p-0" onclick={loadHome} data-sveltekit-reload>
                 <img src={logo} alt="logo" class="logo" />
             </button>
             <div class="logo-group-text ml-2 md:ml-3 lg:ml-4">
                 <slot />
             </div>
-            <button on:click={() => toggleDarkMode()} class="text-xs">
+            <button onclick={() => toggleDarkMode()} class="text-xs">
                 {isDark === false ? '☀️' : '🌙'}
             </button>
         </div>
@@ -126,7 +127,7 @@
         <!-- Mobile Navigation Toggle -->
         <button
             class="hover:bg-brand-100/10 rounded-lg pb-6 text-2xl md:hidden"
-            on:click={toggleMenu}
+            onclick={toggleMenu}
             aria-label="Toggle Menu"
             aria-expanded={isMenuOpen}
         >
@@ -145,7 +146,7 @@
                         <a 
                             href={item.href}
                             class="hover:text-brand-300 text-current transition-colors"
-                            on:click={() => (isMenuOpen = false)}
+                            onclick={toggleMenu}
                         >
                             {item.text}
                         </a>
@@ -159,7 +160,7 @@
                    <a 
                         href={button.href}
                         class="button cta {button.class}"
-                        on:click={() => (isMenuOpen = false)}
+                        onclick={toggleMenu}
                     >
                         {button.text}
                     </a>
@@ -170,8 +171,8 @@
         <!-- Mobile Navigation Menu -->
         {#if isMenuOpen}
             <div
-                class="bg-brand-900 absolute left-0 top-full w-full md:hidden"
-                on:click|stopPropagation
+                class="bg-brand-900 absolute left-0 top-40 w-full block md:hidden"
+                
                 transition:slide={{ duration: 300 }}
             >
                 <nav class="container mx-auto px-6 py-4">
@@ -181,7 +182,7 @@
                                 <a
                                     href={item.href}
                                     class="hover:text-brand-300 block text-lg text-current transition-colors"
-                                    on:click={() => (isMenuOpen = false)}
+                                    onclick={() => (isMenuOpen = false)}
                                 >
                                     {item.text}
                                 </a>
@@ -193,7 +194,7 @@
                                 <a
                                     href={button.href}
                                     class="button cta {button.class} w-full text-center"
-                                    on:click={() => (isMenuOpen = false)}
+                                    onclick={() => (isMenuOpen = false)}
                                 >
                                     {button.text}
                                 </a>
@@ -221,20 +222,13 @@
     }
 
     .logo {
-        width: 180px;
-        height: 140px;
+        width: 140px;
+        height: 160px;
     }
     @media (min-width: 768px) {
         .logo {
-            width: 150px;
+            width: 100px;
             height: 120px;
         }
     }
-    @media (min-width: 1024px) {
-        .logo {
-            width: 160px;
-            height: 120px;
-        }
-    }
-
 </style>

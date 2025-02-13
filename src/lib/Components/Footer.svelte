@@ -1,7 +1,7 @@
 <script>
     const currentYear = new Date().getFullYear();
-    let theme = $state('default');
-    let isDark = $state(false);
+    let theme; 
+    let isDark = true;
 
     function toggleDarkMode() {
         isDark = !isDark;
@@ -9,7 +9,7 @@
     }
 
     function switchTheme(newTheme) {
-        theme = newTheme;
+        //theme = newTheme;
         document.documentElement.setAttribute('data-theme', newTheme);
     }
 

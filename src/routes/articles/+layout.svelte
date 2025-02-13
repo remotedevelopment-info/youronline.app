@@ -3,10 +3,10 @@
     let { children } = $props();
 </script>
 
-<div class="mt-32 mx-auto max-w-7xl px-4">
+<div class="mt-12 mx-auto max-w-7xl px-4">
 	<header>
 		<h2>{pageState.title}</h2>
-		<p>{pageState.strapline}</p>
+		<p>{pageState.strapline} <a href="/articles">List</a>
 	</header>
     <main>
         <section>
@@ -14,12 +14,3 @@
         </section>
     </main>
 </div>
-
-<style>
-    main {
-        margin-top: 2rem;
-    }
-    section {
-        margin-top: 2rem;
-    }
-</style>

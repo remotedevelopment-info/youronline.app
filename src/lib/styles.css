@@ -1,20 +1,7 @@
 @import url(https://fonts.bunny.net/css?family=abyssinica-sil:400|lato:100,100i,300,400,400i,700,700i,900|oswald:300,400,500,600|sonsie-one:400);
 
 :root {
-    /* Default Purple Palette */
-    --purple-50: 250 245 255;
-    --purple-100: 243 232 255;
-    --purple-200: 233 213 255;
-    --purple-300: 216 180 254;
-    --purple-400: 192 132 252;
-    --purple-500: 168 85 247;
-    --purple-600: 147 51 234;
-    --purple-700: 126 34 206;
-    --purple-800: 107 33 168;
-    --purple-900: 88 28 135;
-    --purple-950: 59 7 100;
-
-    /* Blue Palette */
+    /* Default Blue Palette */
     --blue-50: 239 246 255;
     --blue-100: 219 234 254;
     --blue-200: 191 219 254;
@@ -26,6 +13,19 @@
     --blue-800: 30 64 175;
     --blue-900: 30 58 138;
     --blue-950: 23 37 84;
+
+    /* Purple Palette */
+    --purple-50: 250 245 255;
+    --purple-100: 243 232 255;
+    --purple-200: 233 213 255;
+    --purple-300: 216 180 254;
+    --purple-400: 192 132 252;
+    --purple-500: 168 85 247;
+    --purple-600: 147 51 234;
+    --purple-700: 126 34 206;
+    --purple-800: 107 33 168;
+    --purple-900: 88 28 135;
+    --purple-950: 59 7 100;
 
     /* Orange Palette */
     --orange-50: 255 247 237;
@@ -67,17 +67,17 @@
     --red-950: 69 10 10;
 
     /* Brand defaults to purple */
-    --brand-50: var(--purple-50);
-    --brand-100: var(--purple-100);
-    --brand-200: var(--purple-200);
-    --brand-300: var(--purple-300);
-    --brand-400: var(--purple-400);
-    --brand-500: var(--purple-500);
-    --brand-600: var(--purple-600);
-    --brand-700: var(--purple-700);
-    --brand-800: var(--purple-800);
-    --brand-900: var(--purple-900);
-    --brand-950: var(--purple-950);
+    --brand-50: var(--blue-50);
+    --brand-100: var(--blue-100);
+    --brand-200: var(--blue-200);
+    --brand-300: var(--blue-300);
+    --brand-400: var(--blue-400);
+    --brand-500: var(--blue-500);
+    --brand-600: var(--blue-600);
+    --brand-700: var(--blue-700);
+    --brand-800: var(--blue-800);
+    --brand-900: var(--blue-900);
+    --brand-950: var(--blue-950);
 }
 
 :root[data-theme="blue"] {
@@ -218,6 +218,23 @@ h5,
 h6 {
     font-family: 'Oswald', sans-serif;
 }
+h1 {
+    @apply mt-16 font-bold text-4xl md:text-2xl lg:text-4xl xl:text-5xl;
+}
+
+h2 {
+    @apply mt-8 font-bold text-3xl md:text-xl lg:text-3xl xl:text-4xl;
+
+}
+
+h3 {
+    @apply mt-6 font-bold text-2xl md:text-lg lg:text-2xl xl:text-3xl;
+
+}
+
+h4 {
+    @apply mt-4 font-bold text-xl md:text-base lg:text-xl xl:text-2xl;
+}
 
 h2.brand {
     @apply font-bold text-4xl sm:text-4xl md:text-3xl lg:text-5xl xl:text-6xl;
@@ -236,15 +253,51 @@ main {
 }
 
 section {
-    @apply my-8 md:py-12;
+    @apply pt-0;
 }
 section>.page-content {
-    @apply mx-auto px-4 container;
+    @apply mx-auto px-4 pt-8 container;
 }
 
 article {
     @apply mt-4;
 } 
+
+/** common styles for Feature and Featured */
+.feature {
+    @apply flex flex-col min-h-[calc(100vh-140px)] items-center box-border p-0 m-0 overflow-auto break-words w-full
+        bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
+}
+.feature .feature-header {
+    @apply flex flex-row justify-center items-center my-8 w-full text-4xl;
+}
+.feature .feature-sides {
+    @apply flex justify-between;
+}
+.feature .feature-sides .feature-side {
+    @apply w-1/2;
+}
+.feature .feature-sides .feature-side img {
+    @apply w-auto h-full object-cover;
+    height: 50vh;
+    width: 100%;
+}
+.feature .feature-sides .feature-side.left {
+    @apply justify-self-start w-80;
+}
+
+.feature .feature-sides .feature-side.right {
+    @apply justify-self-end pl-8 w-80 text-left;
+}
+
+.feature .feature-footer {
+    @apply mt-8;
+}
+
+nav ul,
+nav oi {
+    list-style: none;
+}
 
 .terms {
     font-size: 0.8rem;
@@ -301,22 +354,6 @@ h6,
 p {
     @apply mt-2 text-gray-900 dark:text-gray-100;
 }
-
-
-h1 {
-    @apply mt-8 font-bold text-4xl md:text-2xl lg:text-4xl xl:text-5xl;
-}
-
-h2 {
-    @apply mt-4 font-bold text-3xl md:text-xl lg:text-3xl xl:text-4xl;
-
-}
-
-h3 {
-    @apply mt-2 font-bold text-2xl md:text-lg lg:text-2xl xl:text-3xl;
-
-}
-
 
 button.primary {
     @apply bg-blue-500 shadow-lg my-8 px-4 py-2 rounded-lg text-white;

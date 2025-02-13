@@ -1,6 +1,7 @@
 <script>
 	import Hero from '$lib/Components/Hero.svelte';
 	import Feature from '$lib/Components/Feature.svelte';
+	import Featured from '$lib/Components/Featured.svelte';
 	import TestimonialGrid from '$lib/Components/TestimonialGrid.svelte';
 	import PricingGrid from '$lib/Components/PricingGrid.svelte';
 	import Contact from '$lib/Components/Contact.svelte';
@@ -23,11 +24,52 @@
 			layout="split"
 			slotted="Imagine your business can be online today or this week (if we are busy)."
 		/>
-		<AnimatedScroll next="feature"/>
+		<AnimatedScroll next="features" />
 	</section>
 
+	<Featured disable>
+		{#snippet header()}
+			<div class="content">
+				<div class="header">Our platform</div>
+			</div>
+		{/snippet}
+		{#snippet left()}
+			<div class="content">
+				<div class="left">
+					<img src="/images/at-desk.jpeg" alt="Feature demonstration" />
+				</div>
+			</div>
+		{/snippet}
+		{#snippet right()}
+			<div class="content">
+				<div class="right">
+					<div class="text-2xl text-gray-900 dark:text-gray-100">
+						<h3>Get more sales every day</h3>
+						<p>
+							<strong>YourOnline</strong> a FAST site template using modern technology to render your content
+							very efficiently.
+						</p>
+						<p>
+							You can collect information from simple to build forms, connect your Cadence-CRM to the
+							site and sort our your online presence quickly. A minimum of effort.
+						</p>
+						<p>
+							Your YourOnline site is a "frontend" site that can publish your events and take
+							bookings. With Cadence-CRM integration, your new prospects can signup to your newsletter
+							and you can send them emails from the CRM.
+						</p>
+					</div>
+				</div>
+			</div>
+		{/snippet}
+		{#snippet footer()}
+		<div class="content">
+			<div class="footer">Get your site build started</div>
+		</div>
+	{/snippet}
+	</Featured>
 	<!-- Features Section -->
-	<section id="feature">
+	<section id="features">
 		<!-- Features component -->
 		<Feature format="double" background="var(--navy)" foreground="var(--white)">
 			<svelte:fragment slot="header">Our Platform</svelte:fragment>
@@ -40,24 +82,23 @@
 				<div class="text-2xl text-gray-900 dark:text-gray-100">
 					<h3>Get more sales every day</h3>
 					<p class="text-2xl text-gray-900 dark:text-gray-100">
-						<strong>YourOnline</strong> a FAST site template using modern technology to render
-						your content very efficiently.
+						<strong>YourOnline</strong> a FAST site template using modern technology to render your content
+						very efficiently.
 					</p>
 					<p>
-						You can collect information from simple to build forms, connect your Cadence-CRM to the 
+						You can collect information from simple to build forms, connect your Cadence-CRM to the
 						site and sort our your online presence quickly. A minimum of effort.
 					</p>
 					<p>
-						Your YourOnline site is a "frontend" site that can publish your events and take bookings.
-						With Cadence-CRM integration, your new prospects can signup to your newsletter and you can send them emails from the CRM.
+						Your YourOnline site is a "frontend" site that can publish your events and take
+						bookings. With Cadence-CRM integration, your new prospects can signup to your newsletter
+						and you can send them emails from the CRM.
 					</p>
 				</div>
 			</svelte:fragment>
-			<svelte:fragment>
-				Get your site build started
-			</svelte:fragment>
+			<svelte:fragment>Get your site build started</svelte:fragment>
 		</Feature>
-		<AnimatedScroll next="testimonials"/>
+		<AnimatedScroll next="testimonials" />
 	</section>
 
 	<!-- Testimonials Section -->
@@ -74,7 +115,6 @@
 	<!-- CTA Section with Product Grid -->
 	<section id="pricing">
 		<PricingGrid plans={pricingPlans} />
-		<SpecialOffer />
 	</section>
 
 	<!-- Contact Section -->
@@ -96,4 +136,7 @@
 		line-height: 1.6;
 		margin-top: 1rem;
 	}
+	/* .right {
+		text-align: right;
+	} */
 </style>

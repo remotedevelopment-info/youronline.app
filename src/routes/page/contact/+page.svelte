@@ -1,5 +1,5 @@
 <div class="bg-black">
-	<div class="mt-24">
+	<div class="mt-4">
 		<!-- Calendly inline widget begin -->
 		<div
 			class="calendly-inline-widget"

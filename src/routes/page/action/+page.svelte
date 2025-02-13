@@ -3,7 +3,7 @@
 	import ExclusiveOffer from '$lib/Components/ExclusiveOffer.svelte';
 </script>
 
-<section class="mt-24 py-16 md:py-24">
+<section>
 	<div class="container mx-auto px-4">
 		<Contact />
 	</div>

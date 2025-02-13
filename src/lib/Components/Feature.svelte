@@ -15,7 +15,8 @@
         background = 'var(--black)',
         foreground = 'var(--white)',
         footer = true,
-        header = false
+        header = false,
+        disable = false
     } = $props();
 
     /** @type {string} */
@@ -23,12 +24,11 @@
         `background: ${background}; color: ${foreground}`
     );
 </script>
-
-<div class="flex flex-col min-h-[calc(100vh-140px)] items-center box-border p-0 m-0 overflow-auto break-words w-full
-            bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+{#if !disable}
+<div class="feature">
 
     {#if header}
-        <div class="flex flex-row justify-between items-center w-full">
+        <div class="feature-header">
             <h2 class="text-4xl md:text-5xl font-bold">
                 <slot name="header" />
             </h2>
@@ -58,7 +58,7 @@
         </div>
     {/if}
 </div>
-
+{/if}
 <style>
     .feature-side {
         width: 100%;

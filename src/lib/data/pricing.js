@@ -18,7 +18,7 @@ export const pricingPlans = [
         paypalId: "basic-paypal-btn"
     },
     {
-        title: "Professional Wesbite with CRM Integration",
+        title: "Professional Website with CRM Integration",
         link: "/product/professional",
         price: 97,
         isPopular: true,
