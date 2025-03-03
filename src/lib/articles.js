@@ -1,5 +1,11 @@
 export const articles = [
   {
+    id: 'services',
+    date: '2025-02-16',
+    title: 'Services',
+    description: 'Our evolving services'
+  },
+  {
     id: 'this-site',
     date: '2025-01-01',
     title: 'This Site',

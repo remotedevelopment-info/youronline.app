@@ -22,8 +22,8 @@
     let {
         src,
         alt,
-        width,
-        height,
+        width = '100%',
+        height = 'auto',
         fit = 'responsive',
         loading = 'lazy',
         className = '',
@@ -75,8 +75,8 @@
      */
     function getDensityPath(baseSrc, density) {
         if (density === '1x') return baseSrc;
-        const extension = baseSrc.split('.').pop();
-        const basePath = baseSrc.slice(0, -(extension.length + 1));
+        const extension = baseSrc.split('.').pop() ?? '';
+        const basePath = baseSrc.slice(0, - (extension.length + 1));
         return `${basePath}@${density}.${extension}`;
     }
 
