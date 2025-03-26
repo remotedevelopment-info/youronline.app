@@ -201,9 +201,26 @@
     --red-900: 254 226 226;
     --red-950: 254 242 242;
 }
-
 body {
     font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/* Re-enable text selection for specific elements where you want it */
+input,
+textarea,
+[contenteditable="true"],
+.selectable-text {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    cursor: text;
 }
 
 h1 {
@@ -219,30 +236,30 @@ h6 {
     font-family: 'Oswald', sans-serif;
 }
 h1 {
-    @apply mt-16 font-bold text-4xl md:text-2xl lg:text-4xl xl:text-5xl;
+    @apply mt-12 font-bold md:text-2xl text-4xl lg:text-4xl xl:text-5xl;
 }
 
 h2 {
-    @apply mt-8 font-bold text-3xl md:text-xl lg:text-3xl xl:text-4xl;
+    @apply mt-8 font-bold md:text-xl text-3xl lg:text-3xl xl:text-4xl;
 
 }
 
 h3 {
-    @apply mt-6 font-bold text-2xl md:text-lg lg:text-2xl xl:text-3xl;
+    @apply mt-8 font-bold md:text-lg text-2xl lg:text-2xl xl:text-3xl;
 
 }
 
 h4 {
-    @apply mt-4 font-bold text-xl md:text-base lg:text-xl xl:text-2xl;
+    @apply mt-8 font-bold md:text-base text-xl lg:text-xl xl:text-2xl;
 }
 
 h2.brand {
-    @apply font-bold text-4xl sm:text-4xl md:text-3xl lg:text-5xl xl:text-6xl;
+    @apply m-0 font-bold md:text-3xl text-4xl sm:text-4xl lg:text-5xl xl:text-6xl;
     font-family: 'Abyssinica SIL', serif;
 }
 
 h3.brand {
-    @apply font-bold text-xl md:text-base lg:text-2xl xl:text-2xl;
+    @apply m-0 font-bold md:text-base text-xl lg:text-2xl xl:text-2xl;
     font-family: 'Oswald', display;
 }
 
@@ -352,7 +369,7 @@ h4,
 h5,
 h6,
 p {
-    @apply mt-2 text-gray-900 dark:text-gray-100;
+    @apply text-gray-900 dark:text-gray-100;
 }
 
 button.primary {

@@ -3,14 +3,20 @@
     let { children } = $props();
 </script>
 
-<div class="mt-12 mx-auto max-w-7xl px-4">
-	<header>
+<div class="shadow-lg mx-auto mt-6 mb-1 px-4 max-w-7xl">
+	<header class="flex justify-between items-baseline">
 		<h2>{pageState.title}</h2>
-		<p>{pageState.strapline} <a href="/articles">List</a>
+		<p><a href="/articles">{pageState.strapline}</a>
 	</header>
-    <main>
+    <hr/>
+    <main class="mt-12">
         <section>
             {@render children()}
         </section>
     </main>
 </div>
+<style>
+    hr {
+        border: 1px solid #ccc;
+    }
+</style>

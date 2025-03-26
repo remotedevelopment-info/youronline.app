@@ -3,7 +3,7 @@
     import { pageState } from '$lib/states/pageState.svelte.js';
 
     pageState.title = 'Articles';
-    pageState.strapline = 'Our blog';
+    pageState.strapline = 'List of articles';
 
     const showDates = $state(true);
     let sorted = articles;

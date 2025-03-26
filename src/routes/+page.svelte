@@ -16,13 +16,14 @@
 	<section id="hero">
 		<!-- Hero component ... Split layout with image on right -->
 		<Hero
+			layout="full"
 			image="/images/person1.jpeg"
-			h1="Your Business ONLINE"
-			h2="FREE Website Development?"
-			slogan="YourOnline offers you a website build. For FREE."
-			content="Yes, there are terms and conditions. You must subscribe to 3 months of hosting on our fast cloud server or have an active subscription to Cadence-CRM."
-			layout="split"
-			slotted="Imagine your business can be online today or this week (if we are busy)."
+			h1="Build an online business"
+			h2="Get your unique idea in front of the world, today."
+			slogan="We work with you to create a compelling online experience."
+			content="You pay one subscription for development, hosting and updates."
+			slotted="Create a plaform.  Implement your unique idea.  Get your business online."
+			h3="Leads, Sales, Repeat Business"
 		/>
 		<AnimatedScroll next="features" />
 	</section>
@@ -36,14 +37,14 @@
 		{#snippet left()}
 			<div class="content">
 				<div class="left">
-					<img src="/images/at-desk.jpeg" alt="Feature demonstration" />
+					<img src="/images/office-team.jpeg" alt="Feature demonstration" />
 				</div>
 			</div>
 		{/snippet}
 		{#snippet right()}
 			<div class="content">
 				<div class="right">
-					<div class="text-2xl text-gray-900 dark:text-gray-100">
+					<div class="text-gray-900 dark:text-gray-100 text-2xl">
 						<h3>Get more sales every day</h3>
 						<p>
 							<strong>YourOnline</strong> a FAST site template using modern technology to render your content
@@ -75,13 +76,13 @@
 			<svelte:fragment slot="header">Our Platform</svelte:fragment>
 
 			<svelte:fragment slot="left">
-				<img src="/images/at-desk.jpeg" alt="Feature demonstration" />
+				<img src="/images/office-team.jpeg" alt="Feature demonstration" />
 			</svelte:fragment>
 
 			<svelte:fragment slot="right">
-				<div class="text-2xl text-gray-900 dark:text-gray-100">
+				<div class="text-gray-900 dark:text-gray-100 text-2xl">
 					<h3>Get more sales every day</h3>
-					<p class="text-2xl text-gray-900 dark:text-gray-100">
+					<p class="text-gray-900 dark:text-gray-100 text-2xl">
 						<strong>YourOnline</strong> a FAST site template using modern technology to render your content
 						very efficiently.
 					</p>
