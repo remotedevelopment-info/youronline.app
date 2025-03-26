@@ -19,15 +19,15 @@
 <div class="block {xclass}">
 	<button
 		class="relative bottom-1 left-1/2 -translate-x-1/2 opacity-80 transition-all
-       duration-300 hover:opacity-100 text-white
+       duration-300 hover:opacity-100 text-black dark:text-white
        {hasScrolled ? 'opacity-0' : ''}"
 		on:click={scrollToNext}
 		aria-label="Scroll to next section"
 	>
-		<div class="p-3 border border-4 rounded-full animate-bounce">
+		<div class="p-3 border border-4 dark:border-white border-black rounded-full animate-bounce">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				class="w-8 h-8 text-white"
+				class="w-8 h-8 text-black dark:text-white"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke="currentColor"

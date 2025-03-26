@@ -236,21 +236,21 @@ h6 {
     font-family: 'Oswald', sans-serif;
 }
 h1 {
-    @apply mt-12 font-bold md:text-2xl text-4xl lg:text-4xl xl:text-5xl;
+    @apply mb-12 font-bold md:text-2xl text-4xl lg:text-4xl xl:text-5xl;
 }
 
 h2 {
-    @apply mt-8 font-bold md:text-xl text-3xl lg:text-3xl xl:text-4xl;
+    @apply mt-8 mb-6 font-bold md:text-xl text-3xl lg:text-3xl xl:text-4xl;
 
 }
 
 h3 {
-    @apply mt-8 font-bold md:text-lg text-2xl lg:text-2xl xl:text-3xl;
+    @apply mt-8 mb-6 font-bold md:text-lg text-2xl lg:text-2xl xl:text-3xl;
 
 }
 
 h4 {
-    @apply mt-8 font-bold md:text-base text-xl lg:text-xl xl:text-2xl;
+    @apply mt-8 mb-6 font-bold md:text-base text-xl lg:text-xl xl:text-2xl;
 }
 
 h2.brand {
@@ -263,12 +263,15 @@ h3.brand {
     font-family: 'Oswald', display;
 }
 
-
 body,
 main {
     @apply bg-brand-100 dark:bg-brand-950 text-gray-800 dark:text-gray-200;
+    font-size: 1.25rem;
 }
 
+p {
+    margin-bottom: 1.25rem;
+}
 section {
     @apply pt-0;
 }

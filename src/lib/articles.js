@@ -1,8 +1,20 @@
 export const articles = [
   {
+    id: 'case-study',
+    date: '2025-03-25',
+    title: 'Case Study',
+    description: 'A case study of a project'
+  },
+  {
+    id: 'software',
+    date: '2025-03-24',
+    title: 'Software Service for Enterprise',
+    description: 'Your software project'
+  },
+  {
     id: 'services',
     date: '2025-02-16',
-    title: 'Services',
+    title: 'Services for you',
     description: 'Our evolving services'
   },
   {
