@@ -12,7 +12,7 @@
 
 	/** @typedef {Object} HeaderProps
 	 * @property {Object} children
-	 * @property {NavItem[]} navItems
+	 * @property {Object[]} navItems
 	 * @property {string} [background]
 	 * @property {string} [colour]
 	 */

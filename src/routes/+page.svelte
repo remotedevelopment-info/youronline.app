@@ -18,57 +18,16 @@
 		<Hero
 			layout="full"
 			image="/images/person1.jpeg"
-			h1="Build an online business"
-			h2="Get your unique idea in front of the world, today."
+			h1="Your online business idea"
+			h2="You have a brilliant idea. How do you put it in front of the world."
 			slogan="We work with you to create a compelling online experience."
 			content="You pay one subscription for development, hosting and updates."
 			slotted="Create a plaform.  Implement your unique idea.  Get your business online."
-			h3="Leads, Sales, Repeat Business"
+			h3="Get leads.  Make sales.  Repeat business."
 		/>
 		<AnimatedScroll next="features" />
 	</section>
-
-	<Featured disable>
-		{#snippet header()}
-			<div class="content">
-				<div class="header">Our platform</div>
-			</div>
-		{/snippet}
-		{#snippet left()}
-			<div class="content">
-				<div class="left">
-					<img src="/images/office-team.jpeg" alt="Feature demonstration" />
-				</div>
-			</div>
-		{/snippet}
-		{#snippet right()}
-			<div class="content">
-				<div class="right">
-					<div class="text-gray-900 dark:text-gray-100 text-2xl">
-						<h3>Get more sales every day</h3>
-						<p>
-							<strong>YourOnline</strong> a FAST site template using modern technology to render your content
-							very efficiently.
-						</p>
-						<p>
-							You can collect information from simple to build forms, connect your Cadence-CRM to the
-							site and sort our your online presence quickly. A minimum of effort.
-						</p>
-						<p>
-							Your YourOnline site is a "frontend" site that can publish your events and take
-							bookings. With Cadence-CRM integration, your new prospects can signup to your newsletter
-							and you can send them emails from the CRM.
-						</p>
-					</div>
-				</div>
-			</div>
-		{/snippet}
-		{#snippet footer()}
-		<div class="content">
-			<div class="footer">Get your site build started</div>
-		</div>
-	{/snippet}
-	</Featured>
+	
 	<!-- Features Section -->
 	<section id="features">
 		<!-- Features component -->
@@ -76,7 +35,7 @@
 			<svelte:fragment slot="header">Our Platform</svelte:fragment>
 
 			<svelte:fragment slot="left">
-				<img src="/images/office-team.jpeg" alt="Feature demonstration" />
+				<img src="/images/office-work.jpeg" alt="Feature demonstration" width="800px" height="auto" />
 			</svelte:fragment>
 
 			<svelte:fragment slot="right">

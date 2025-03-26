@@ -1,6 +1,5 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import AnimatedScroll from '$lib/Components/AnimatedScroll.svelte';
 	/** @typedef {Object} HeroProps
 	 * @property {string} image - URL of the background/side image
 	 * @property {string} image2 - URL of the second image for split layout
@@ -35,8 +34,7 @@
 </script>
 
 <div
-	class="relative flex items-center min-h-(calc(100vh)) md:min-h-full lg:min-h-dvh xl:min-h-lvh
-           {layout === 'split' ? 'overflow-hidden bg-gray-50 dark:bg-gray-900' : ''}"
+	class="hero {layout === 'split' ? 'overflow-hidden bg-gray-50 dark:bg-gray-900' : ''}"
 	class:bg-cover={layout === 'full'}
 	class:bg-center={layout === 'full'}
 	style={layout === 'full' ? `background-image: url(${image})` : ''}
@@ -105,7 +103,24 @@
 					/>
 				</div>
 			{/if}
-			<div class="items-self-center mt-12 text-white text-2xl" onmouseover={scrollDown()}>{cta}</div>
+			<div class="items-self-center mt-12 text-white text-2xl" >{cta}</div>
 		</div>
 	</div>
 </div>
+
+<style>
+	.hero {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-size: cover;
+		height: calc(100vh - 16rem);
+	}
+	@media (min-width: 640px) {
+		.hero {
+			height: calc(100vh - 20rem);
+		}
+	}
+</style>

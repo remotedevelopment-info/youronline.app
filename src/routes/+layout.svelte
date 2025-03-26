@@ -50,7 +50,7 @@
 	<!-- Header Area -->
 	<Header navItems={navItems} background="black" colour="white">
 		<h2 class="brand">YourOnline</h2>
-		<h3 class="brand">Your Business online FAST</h3>
+		<h3 class="brand">Online Software Implemented for you</h3>
 	</Header>
 	<main class="flex-grow">
 		<ParaglideJS {i18n}>
