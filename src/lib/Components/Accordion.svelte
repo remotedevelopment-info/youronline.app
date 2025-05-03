@@ -1,18 +1,20 @@
 <script>
-	import { currentPage } from '$lib/stores.js';
 	import { browser } from '$app/environment';
-	export let header = 'Click + to open';
-	export let headerStyle = 'large';
-	export let variant = 'inline';
-	export let opened = false;
-	export let icon = '';
-	export let id = 'accordion';
-	export let comment = '';
-	let openState = opened;
+	let {
+		header,
+		openHeader = '',
+		headerStyle = '',
+		variant,
+		opened = false,
+		icon = '',
+		id,
+		comment = 'Click to open'
+	} = $props();
+	let openState = $state(opened);
 
-	currentPage.subscribe((value) => {
-		if (value && value.title === id.toLowerCase()) {
-			openState = true;
+	$effect(() => {
+		if (variant === 'inline' && browser) {
+			document.documentElement.style.setProperty('--accordion-header-background', 'none');
 		}
 	});
 
@@ -20,55 +22,67 @@
 		openState = !openState;
 	}
 
-	if (variant === 'inline') {
-		if (browser) {
-			const root = document.documentElement;
-			root.style.setProperty('--accordion-header-background', 'none');
-		}
-	}
-
 	const downarrow = '/images/icons/down.svg';
 </script>
 
 <div class="accordion-container">
 	<div class="accordion size {openState ? 'large' : 'small'}">
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			class="accordion-header {headerStyle} {openState ? 'opened' : 'closed'}"
-			on:click={() => toggleOpen()}
-			onkeypress={() => toggleOpen()}
+			onclick={toggleOpen}
+			onkeypress={toggleOpen}
+			role="button"
+			tabindex="0"
+			aria-expanded={openState}
+			aria-controls={`accordion-body-${id}`}
 		>
 			<div class="accordion-header__text">
-				<div class="accordion-header__text--header {variant}">
-					<slot name="header">{header}</slot>
-				</div>
-				<div class="accordion-header__text--comment">
-					<em>
-						<slot name="comment">{comment}</slot>
-					</em>
-				</div>
+				{#if !openState}
+					<div class="accordion-header__text--header {variant}">
+						<slot name="header"><h4>{header}</h4></slot>
+					</div>
+					<div class="accordion-header__text--comment">
+						<em>
+							<slot name="comment">{comment}</slot>
+						</em>
+					</div>
+				{:else}
+					<div class="accordion-header__text--header {variant} inline">
+						<slot name="header"><h3>{openHeader}</h3></slot>
+					</div>
+				{/if}
 			</div>
-			<button class="control">
-				<img class="down" class:turn={openState} src={downarrow} alt="down-arrow" />
+			<button class="control" aria-label={openState ? 'Close accordion' : 'Open accordion'}>
+				{#if openState}
+				<svg class:turn={openState} width="48" height="48" viewBox="0 0 24 24" aria-hidden="true">
+					<path d="M7 10l5 5 5-5z" />
+				  </svg>
+				{:else}
+				<svg class:turn={openState} width="48" height="48" viewBox="0 0 24 24" aria-hidden="true">
+					<path d="M7 10l5 5 5-5z" />
+				  </svg>
+				{/if}
+				<!-- <img class="down" class:turn={openState} src={downarrow} alt="down-arrow" /> -->
 			</button>
 		</div>
 		<div class="accordion-icon">
 			<slot name="icon">{icon}</slot>
 		</div>
-		<div class="accordion-body {openState?'opened':'closed'}">
+		<div class="accordion-body {openState ? 'opened' : 'closed'}">
 			<slot />
 		</div>
 	</div>
 </div>
 
 <style>
-	:host {
-		--accordion-header-background: var(--medium);
+	/* :host {
+		--accordion-header-background: var(--bg-brand-100);
+		--accordion-header-color: var(--bg-brand-900);
+	} */
+	.accordion-container {
+		display: block;
+		z-index: 10;
 	}
-    .accordion-container {
-        display: block;
-        z-index: 10;
-    }
 	.accordion {
 		/* set pointer to an arrow */
 		cursor: pointer;
@@ -109,21 +123,29 @@
 		justify-content: space-between;
 		align-items: center;
 		max-width: 100%;
-		font-size: 1.5rem;
-		background: var(--accordion-header-background, var(--dark));
-		color: var(--white);
+		font-size: 2rem;
+		background: var(--accordion-header-background, white);
+		color: var(--accordion-header-color, black);
 		box-shadow: 0 0 1.5rem var(--dark);
-		font-family: 'Archivo Black', sans-serif;
 		font-weight: 600;
-		padding: 0 1rem;
-	}
-	.accordion-header {
-		background: var(--dark);
-		color: var(--white);
 	}
 	.accordion-header.closed {
-		background: var(--accordion-header-background, var(--dark));
-		color: var(--light)	
+		padding: 0 1rem 1.5rem;
+		opacity: 0.85;
+	}
+	.accordion-header.closed h4 {
+		font-size: 2rem;
+	}
+	.accordion-header.opened {
+		color: var(--accordion-header-color, white);
+		background: var(--accordion-header-background, transparent);
+		padding: 0 0.5rem;
+	}
+	.accordion-header.opened h3 {
+		font-size: 3rem;
+	}
+	.accordion-header.closed h4 {
+		color: var(--accordion-header-color, black);
 	}
 	.accordion-header__text {
 		align-items: center;
@@ -161,7 +183,6 @@
 		color: var(--accordion-body-color, var(--dark));
 		display: none;
 		font-size: large;
-
 	}
 	.accordion-body.opened {
 		display: block;
@@ -169,25 +190,27 @@
 	.accordion-body.closed {
 		display: none;
 	}
-	button.control {
-		border: none;
-		background: transparent;
-		box-shadow: none;
-	}
-	.control .down {
-		fill: var(--light);
+
+	.accordion-header .control {
+		fill: var(--accordion-header-color, black);
 		filter: invert(82%) sepia(93%) saturate(1352%) hue-rotate(200deg) brightness(119%)
 			contrast(119%);
 		font-weight: 900;
 		transition: all 0.5s ease-out;
-	}
-	img.down {
-		font-weight: 900;
-		border: 0;
-		width: 24px;
+		width: 48px;
 		height: auto;
 	}
-	img.turn {
+	.accordion-header.opened .control {
+		fill: var(--accordion-header-color, white);
+		filter: invert(22%) sepia(93%) saturate(1352%) hue-rotate(200deg) brightness(119%)
+			contrast(119%);
+	}
+	.accordion-header.closed .control {
+		fill: var(--accordion-header-color, red);
+		filter: invert(22%) sepia(93%) saturate(1352%) hue-rotate(200deg) brightness(119%)
+			contrast(119%);
+	}
+	.control .turn {
 		transform: rotate(180deg);
 	}
 </style>

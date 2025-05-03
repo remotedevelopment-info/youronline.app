@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"publish": "cd ./build && tar cvfz yol.tar.gz . && scp yol.tar.gz nalex@sfsw.net: && ssh nalex@sfsw.net && cd .. && rm -rf build",
+		"publish": "cd ./build && tar cvfz yola.tar.gz . && scp yola.tar.gz nalex@sfsw.net: && ssh nalex@sfsw.net && cd .. && rm -rf build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",

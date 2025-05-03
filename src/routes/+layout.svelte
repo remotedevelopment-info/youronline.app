@@ -13,6 +13,7 @@
 	 */
 	/** @type {NavItem[]} */
 	const navItems = $state([
+		{ href: '/apps', text: 'Apps'},
 		{ href: '/pricing', text: 'Pricing' },
 		{ href: '/articles', text: 'Articles' }
 	]);

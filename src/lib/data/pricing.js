@@ -22,6 +22,7 @@ export const pricingPlans = [
     {
         title: "Professional Website with CRM Integration",
         link: "/product/professional",
+        disclaimer: true,
         price: 97,
         isPopular: true,
         features: [
@@ -42,7 +43,7 @@ export const pricingPlans = [
             { name: "Build your custom online application", included: false },
             { name: "Software Development Team", included: false }
         ],
-        paypalId: "pro-paypal-btn"
+        paypalId: "premium-paypal-btn"
     },
     {
         title: "Enterprise Development",
