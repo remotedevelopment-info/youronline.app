@@ -7,7 +7,16 @@ export default defineConfig({
         project: "./project.inlang",
         outdir: "./src/lib/paraglide"
     })],
-
+	build: {
+		// Add a timestamp or version to the file names
+		rollupOptions: {
+			output: {
+				entryFileNames: `[name].[hash].js`,
+				chunkFileNames: `[name].[hash].js`,
+				assetFileNames: `[name].[hash].[ext]`
+			}
+		}
+	},
     test: {
         include: ['src/**/*.{test,spec}.{js,ts}']
     }

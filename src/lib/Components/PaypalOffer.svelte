@@ -59,6 +59,8 @@
 	 * @type {boolean}
 	 */
 	export let disclaimer = true;
+	export let invoicing = false;
+	
 	const vat = variables.vat.length > 0;
 
 	let includeVAT = vat ? true : false;
@@ -69,11 +71,12 @@
 </script>
 
 <div class="panel">
-	
 	<div class="row">
-		<img src={logo} alt={logo} class="logo" />
-		<div class="details">
-			<h3>{heading}</h3>
+		<div class="details centered">
+			<div class="row centered">
+				<img src={logo} alt={logo} class="logo" />
+				<h3>{heading}</h3>
+			</div>
 			{planDetails}
 			{#if fixedPrice}
 				<h3>Fixed Price deal</h3>
@@ -99,7 +102,7 @@
 							: parseFloat(monthly).toFixed(2)}
 					</li>
 				{/if}
-				{#if monthlyHosting && monthlyHosting !== "0"}
+				{#if monthlyHosting && monthlyHosting !== '0'}
 					{#if fixedPrice}
 						<em>plus</em>
 					{:else}
@@ -122,7 +125,7 @@
 					</li>
 				{/if}
 			</ul>
-			<div class="cta">
+			<div class="cta centered">
 				{#if monthlyPaypalLink}
 					<a class="button primary medium" href={monthlyPaypalLink}>
 						{monthlyDescription}
@@ -156,6 +159,11 @@
 					managed by Paypal.
 				</p>
 			{/if}
+			{#if invoicing}
+				<p class="small">
+					Enterprise subscription available with invoicing after one month subscription. Please contact us for details.
+				</p>
+			{/if}
 		</div>
 	</div>
 </div>
@@ -165,6 +173,8 @@
 		margin-top: 0;
 	}
 	.details {
+		display: flex;
+		flex-direction: column;
 		margin-bottom: 2rem;
 	}
 	.small {
@@ -177,17 +187,32 @@
 		align-items: flex-start;
 		gap: 1rem;
 	}
+	.row.centered, 
+	.cta.centered {
+		justify-content: center;
+		align-items: center;
+	}
 	.logo {
-		width: 96%;
+		width: 100px;
 		height: auto;
 		margin: 0;
 		margin-left: -2em;
 		padding: 0;
 		margin: 2rem 0;
 		opacity: 0.8;
+		background: white;
+		color: black;
 	}
 	.button {
 		opacity: 0.8;
+		background: #2211ff;
+		color: white;
+		border-radius: 4px;
+		border: 1px solid white;
+		padding: 0.5rem 1rem;
+		text-decoration: none;
+		cursor: pointer;
+		margin: 1rem 0;
 	}
 	.logo:hover,
 	.button:hover {
@@ -226,16 +251,12 @@
 	}
 	@media screen and (min-width: 1024px) {
 		.logo {
-			width: auto;
 			padding: 1rem;
 			margin: 0;
-			height: 400px;
 		}
 	}
 	@media screen and (min-width: 768px) {
 		.logo {
-			width: auto;
-			height: 300px;
 		}
 	}
 </style>

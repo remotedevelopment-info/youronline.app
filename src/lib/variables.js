@@ -1,7 +1,7 @@
 export const variables = {
-    brand: 'Cadence CRM',
-    slogan: 'CRM for the solo entrepreneur',
+    brand: 'YourOnline',
+    slogan: 'FAST Site builds for your business',
     gAnalytics: '',
     // VAT number or empty if no VAT
-    vat: '' 
+    vat: ''
 }

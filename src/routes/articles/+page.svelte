@@ -2,10 +2,8 @@
     import { articles } from '$lib/articles.js';
     import { pageState } from '$lib/states/pageState.svelte.js';
 
-    console.log(articles);
-
     pageState.title = 'Articles';
-    pageState.strapline = 'Read all about it';
+    pageState.strapline = 'List of articles';
 
     const showDates = $state(true);
     let sorted = articles;
@@ -54,7 +52,6 @@
         return `${month} ${day}, ${year}`;
     }
 </script>
-
 <div class="contain">
 	<ul class="article-list">
 		<li class="article">

@@ -1,6 +1,7 @@
 <script>
 	import Hero from '$lib/Components/Hero.svelte';
 	import Feature from '$lib/Components/Feature.svelte';
+	import Featured from '$lib/Components/Featured.svelte';
 	import TestimonialGrid from '$lib/Components/TestimonialGrid.svelte';
 	import PricingGrid from '$lib/Components/PricingGrid.svelte';
 	import Contact from '$lib/Components/Contact.svelte';
@@ -15,54 +16,49 @@
 	<section id="hero">
 		<!-- Hero component ... Split layout with image on right -->
 		<Hero
-			image="/images/before-after.jpeg"
-			h1="Need to sell more?"
-			h2="The secret is to contact and connect!"
-			slogan="Convert your prospects into customers."
-			content="It takes consistent commumnication to drive demand for your business."
-			layout="split"
-			slotted="Imagine a stream of customers buying from your business regularly. You know you have to do the
-			work, but how do you keep track and maintain contact with a lot of prospects?"
+			layout="full"
+			image="/images/person1.jpeg"
+			h1="Your online business idea"
+			h2="You have a brilliant idea. How do you put it in front of the world."
+			slogan="We work with you to create a compelling online experience."
+			content="You pay one subscription for development, hosting and updates."
+			slotted="Create a plaform.  Implement your unique idea.  Get your business online."
+			h3="Get leads.  Make sales.  Repeat business."
 		/>
-		<AnimatedScroll next="feature"/>
+		<AnimatedScroll next="features" />
 	</section>
-
+	
 	<!-- Features Section -->
-	<section id="feature">
+	<section id="features">
 		<!-- Features component -->
 		<Feature format="double" background="var(--navy)" foreground="var(--white)">
 			<svelte:fragment slot="header">Our Platform</svelte:fragment>
 
 			<svelte:fragment slot="left">
-				<img src="/images/at-desk.jpeg" alt="Feature demonstration" />
+				<img src="/images/office-work.jpeg" alt="Feature demonstration" width="800px" height="auto" />
 			</svelte:fragment>
 
 			<svelte:fragment slot="right">
-				<div class="text-2xl text-gray-900 dark:text-gray-100">
+				<div class="text-gray-900 dark:text-gray-100 text-2xl">
 					<h3>Get more sales every day</h3>
-					<p class="text-2xl text-gray-900 dark:text-gray-100">
-						<strong>Cadence CRM</strong> is a Customer Relationship Management tool to help you efficiently
-						manage your prospects connections to develop them into customers. It is designed for the
-						modern entreprenur, coach or business that gets it. Contact needs to be tracked and measured.
+					<p class="text-gray-900 dark:text-gray-100 text-2xl">
+						<strong>YourOnline</strong> a FAST site template using modern technology to render your content
+						very efficiently.
 					</p>
 					<p>
-						<strong>Cadence CRM</strong> also helps you manage your online and in person events. This
-						is now an essential tool to grow your business.
+						You can collect information from simple to build forms, connect your Cadence-CRM to the
+						site and sort our your online presence quickly. A minimum of effort.
 					</p>
 					<p>
-						The emphasis is on speed and simplicity. While you are contacting your customers, take
-						notes, send email messages with press button simplicity <strong>Cadence CRM</strong> records
-						what you do.
+						Your YourOnline site is a "frontend" site that can publish your events and take
+						bookings. With Cadence-CRM integration, your new prospects can signup to your newsletter
+						and you can send them emails from the CRM.
 					</p>
-					<p>Our unique AI engine provides a natural flow of deal progression.</p>
 				</div>
 			</svelte:fragment>
-			<svelte:fragment>
-				Easy to use intuitive workflows that help with contacting your people without the
-				complexity.
-			</svelte:fragment>
+			<svelte:fragment>Get your site build started</svelte:fragment>
 		</Feature>
-		<AnimatedScroll next="testimonials"/>
+		<AnimatedScroll next="testimonials" />
 	</section>
 
 	<!-- Testimonials Section -->
@@ -79,7 +75,6 @@
 	<!-- CTA Section with Product Grid -->
 	<section id="pricing">
 		<PricingGrid plans={pricingPlans} />
-		<SpecialOffer />
 	</section>
 
 	<!-- Contact Section -->
@@ -101,4 +96,7 @@
 		line-height: 1.6;
 		margin-top: 1rem;
 	}
+	/* .right {
+		text-align: right;
+	} */
 </style>

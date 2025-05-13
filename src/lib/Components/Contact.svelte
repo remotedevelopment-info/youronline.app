@@ -10,11 +10,13 @@
     let error = null;
   
     const API_URL = 'https://api.youronline.app/api/contact';
-    //  for localhost testing: const API_URL = 'http://localhost:8001/api/contact';
+    //  for localhost testing: 
+    //  const API_URL = 'http://localhost:8001/api/contact';
     
     const handleSubmit = async () => {
       isLoading = true;
       error = null;
+      const source = 'YourOnline.app Contact Form';
       
       try {
         const response = await fetch(API_URL, {
@@ -26,7 +28,8 @@
             first_name,
             last_name,
             email,
-            message
+            message,
+            source
           })
         });
   
@@ -56,10 +59,10 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <h2 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
-          Let's Start Your Business Rhythm
+          Send your questions and enquiries 
         </h2>
         <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
-          Contact us to discover how Cadence CRM can orchestrate your success
+          We'll get back to you shortly.
         </p>
       </div>
       
@@ -121,6 +124,8 @@
             </button>
           </div>
         </form>
+
+        <p>Alternatively, email <a href="mailto:work@sfsw.net">Nicholas</a> and we will get you setup.</p>
         
         {#if submitted}
           <div

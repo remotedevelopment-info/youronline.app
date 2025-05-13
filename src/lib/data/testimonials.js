@@ -1,18 +1,12 @@
 export const testimonialData = [
+    {},
     {
         name: "Nicholas Alexander",
         company: "Software Antelope Ltd",
         headline: "Software is our business",
-        review: "We wrote Cadence-CRM for our coach.  We wrote it in collaboration with AI.  This has enabled us to get the product to market 10x faster than ever before.",
-        rating: 0,
-        image: "/images/nda.jpg"
-    },
-    {
-        name: "Nicholas Alexander",
-        company: "Software Antelope Ltd",
-        headline: "Software is our business",
-        review: "We wrote Cadence-CRM for our coach.  We wrote it in collaboration with AI.  This has enabled us to get the product to market 10x faster than ever before.",
+        review: "I have built many sites but this framework makes it make sense. Client sites are now a breeze to build. That is why we use this framework to build your site. Why? Because it is simple to implement software with your frontend site.",
         rating: 5,
         image: "/images/nda.jpg"
     },
+
 ];
