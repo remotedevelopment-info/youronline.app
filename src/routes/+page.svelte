@@ -31,33 +31,38 @@
 	<!-- Features Section -->
 	<section id="features">
 		<!-- Features component -->
-		<Feature format="double" background="var(--navy)" foreground="var(--white)">
-			<svelte:fragment slot="header">Our Platform</svelte:fragment>
+        <Feature format="double" background="var(--navy)" foreground="var(--white)">
+            {#snippet heading()}
+                Our Platform
+            {/snippet}
 
-			<svelte:fragment slot="left">
-				<img src="/images/office-work.jpeg" alt="Feature demonstration" width="800px" height="auto" />
-			</svelte:fragment>
+            {#snippet leftside()}
+                <img src="/images/office-work.jpeg" alt="Feature demonstration" width="800px" height="auto" />
+            {/snippet}
 
-			<svelte:fragment slot="right">
-				<div class="text-gray-900 dark:text-gray-100 text-2xl">
-					<h3>Get more sales every day</h3>
-					<p class="text-gray-900 dark:text-gray-100 text-2xl">
-						<strong>YourOnline</strong> a FAST site template using modern technology to render your content
-						very efficiently.
-					</p>
-					<p>
-						You can collect information from simple to build forms, connect your Cadence-CRM to the
-						site and sort our your online presence quickly. A minimum of effort.
-					</p>
-					<p>
-						Your YourOnline site is a "frontend" site that can publish your events and take
-						bookings. With Cadence-CRM integration, your new prospects can signup to your newsletter
-						and you can send them emails from the CRM.
-					</p>
-				</div>
-			</svelte:fragment>
-			<svelte:fragment>Get your site build started</svelte:fragment>
-		</Feature>
+            {#snippet rightside()}
+                <div class="text-gray-900 dark:text-gray-100 text-2xl">
+                    <h3>Get more sales every day</h3>
+                    <p class="text-gray-900 dark:text-gray-100 text-2xl">
+                        <strong>YourOnline</strong> a FAST site template using modern technology to render your content
+                        very efficiently.
+                    </p>
+                    <p>
+                        You can collect information from simple to build forms, connect your Cadence-CRM to the
+                        site and sort our your online presence quickly. A minimum of effort.
+                    </p>
+                    <p>
+                        Your YourOnline site is a "frontend" site that can publish your events and take
+                        bookings. With Cadence-CRM integration, your new prospects can signup to your newsletter
+                        and you can send them emails from the CRM.
+                    </p>
+                </div>
+            {/snippet}
+            
+            {#snippet footer()}
+                Get your site build started
+            {/snippet}
+        </Feature>
 		<AnimatedScroll next="testimonials" />
 	</section>
 

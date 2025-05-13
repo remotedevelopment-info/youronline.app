@@ -8,6 +8,7 @@
 
     /** @typedef {Object} PricingProps
      * @property {string} title - Plan name
+     * @property {string} [description] - Plan description
      * @property {string} link - Plan link
      * @property {number} price - Monthly price
      * @property {Feature[]} features - Array of features
@@ -15,18 +16,21 @@
      * @property {string} [buttonText='Get Started'] - CTA button text
      * @property {string} [paypalId] - PayPal button ID
      * @property {string} [period='month'] - Billing period
+     * @property {boolean} [showLink]
      */
 
     /** @type {PricingProps} */
     let { 
         title,
+        description = '',
         link,
         price, 
         features,
         isPopular = false,
         buttonText = 'Get Started',
         paypalId,
-        period = 'month'
+        period = 'month',
+        showLink = true
     } = $props();
 </script>
 
@@ -43,7 +47,14 @@
 
     <div class="mb-8">
         <h3 class="mb-2 font-bold text-gray-900 dark:text-white text-xl">{title}</h3>
-        <p><a href="{link}">More info</a></p>
+        <p class="mb-4 text-gray-600 dark:text-gray-400">
+            {description}
+        </p>
+        {#if showLink}
+            <a href={link} class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 px-5 py-2.5 rounded-lg focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 w-full font-medium text-white text-sm text-center">
+                Learn more
+            </a>
+        {/if}
         <div class="flex items-baseline mb-4">
             <span class="font-bold text-gray-900 dark:text-white text-4xl">£{price}</span>
             <span class="text-gray-500 dark:text-gray-400">/{period}</span>
