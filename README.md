@@ -8,10 +8,10 @@
 
 ## Services
 
-- Done for you coding 
-- - hourly rate (support and training)
-- - weekly rate (includes hosting)
-- - monthly rate (large projects)
+- Done for you coding
+  - hourly rate (support and training)
+  - weekly rate (includes hosting)
+  - monthly rate (large projects)
 
 ## Svelte 5 Migration TODO List
 
