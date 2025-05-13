@@ -1,17 +1,55 @@
-# youronline.app site
+# YourOnline.app Website
 
-## development project
+## Service Evolution Plan (v1.1.0)
 
-### a base set of components to render websites quickly
+### New Service Direction: "Done for You Coding"
 
-### with pages to make these services availble
+Our services are evolving from basic website hosting to expertise-driven development partnerships that leverage AI technology while providing human oversight, strategic guidance, and implementation expertise.
 
-## Services
+### Key Value Propositions
 
-- Done for you coding
-  - hourly rate (support and training)
-  - weekly rate (includes hosting)
-  - monthly rate (large projects)
+1. **Speed & Adaptability**: Rapid development cycles that adapt to emerging tech breakthroughs
+2. **AI Expertise**: Leveraging cutting-edge AI tools with expert human guidance
+3. **Scalable Resources**: On-demand expertise without the cost of hiring full-time specialists
+4. **Knowledge Transfer**: Training your team to use AI tools effectively alongside development
+5. **Implementation Expertise**: Bridging the gap between AI possibilities and production-ready code
+
+### Revised Service Tiers
+
+#### 1. On-Demand Expertise (Hourly)
+- Expert consultation and implementation
+- AI-assisted coding and problem solving
+- Team training sessions on AI-assisted development
+- WhatsApp priority support
+- Perfect for: Specific technical challenges, training sessions, and consulting needs
+
+#### 2. Weekly Development Sprints
+- Dedicated weekly development blocks
+- Hosting included
+- Staging environment with subdomain
+- Daily standup meetings
+- WhatsApp support
+- Weekly planning and review sessions
+- AI Agent setup and configuration
+- Perfect for: Feature development, new product initiatives, and website overhauls
+
+#### 3. Continuous Development Partnership (Monthly)
+- Dedicated development team
+- Full backend/frontend development
+- Custom AI Agent development
+- Enterprise hosting with scaling
+- System architecture and planning
+- Daily standups and weekly reviews
+- On-call emergency support
+- Knowledge transfer to internal teams
+- Perfect for: Complex products, startups needing technical co-founders, and enterprise solutions
+
+### Implementation Plan
+1. Update pricing structure in `pricing.js`
+2. Revise marketing copy on landing pages
+3. Create new service description pages
+4. Update testimonials to reflect new service direction
+5. Redesign pricing component to emphasize value over features
 
 ## Svelte 5 Migration TODO List
 
