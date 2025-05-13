@@ -72,6 +72,14 @@
     .feature-header {
         padding: 0;
         background: rgb(var(--brand-900));
+        color: rgb(var(--brand-100));
+    }
+    .feature-header h1 {
+        color: rgb(var(--brand-100));
+        padding: 2rem;
+        margin: 0;
+        text-align: center;
+        font-size: 4rem;
     }
     .feature-side {
         width: 100%;
