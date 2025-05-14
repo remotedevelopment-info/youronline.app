@@ -18,7 +18,7 @@
 	import SpecialOffer from '$lib/Components/SpecialOffer.svelte';
     import TestimonialCard from '$lib/Components/TestimonialCard.svelte';
     import TestimonialGrid from '$lib/Components/TestimonialGrid.svelte';
-    import VideoPlayer from '$lib/Components/VideoPlayer.svelte';
+    // import VideoPlayer from '$lib/Components/VideoPlayer.svelte';
 </script>
 
 <div class="bg-brand-100 dark:bg-brand-950 m-4 p-4">
@@ -1002,7 +1002,7 @@
 			</section>
 		</details>
 
-        <details>
+        <!-- <details>
             <summary class="font-bold text-lg">
                 <h2 class="inline mb-2 font-bold text-2xl">VideoPlayer Component</h2>
                 <p class="mb-4">
@@ -1015,7 +1015,7 @@
                 <div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
                     <div class="bg-white dark:bg-brand-800 p-6">
                         <div class="space-y-8">
-                            <!-- Standard Video Player -->
+
                             <div>
                                 <h3 class="mb-4 font-bold text-xl">Standard Video Player</h3>
                                 <VideoPlayer
@@ -1027,7 +1027,6 @@
                                 />
                             </div>
                             
-                            <!-- YouTube Embed -->
                             <div>
                                 <h3 class="mb-4 font-bold text-xl">YouTube Embed</h3>
                                 <VideoPlayer
@@ -1037,7 +1036,6 @@
                                 />
                             </div>
                             
-                            <!-- Responsive Video with Multiple Sources -->
                             <div>
                                 <h3 class="mb-4 font-bold text-xl">Responsive Video with Multiple Sources</h3>
                                 <VideoPlayer
@@ -1069,7 +1067,7 @@
                     </ul>
                 </div>
             </section>
-        </details>
+        </details> -->
 
 	</details>
 </div>
