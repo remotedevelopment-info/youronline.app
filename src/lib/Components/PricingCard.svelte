@@ -93,9 +93,9 @@
             <PaypalOffer
                 heading="Basic subscription"
                 logo="/packages/basic.svg"
-                setupPrice="0"
-                monthly="49"
-                annual="490"
+                setupPrice={0}
+                monthly={49}
+                annual={490}
                 monthlyPaypalLink="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-396299840S993105VM77ARWA"
                 monthlyDescription="Start subscription"
                 annualNote=""
@@ -111,9 +111,9 @@
             <PaypalOffer
                 heading="Premium subscription"
                 logo="/packages/premium.svg"
-                setupPrice="0"
-                monthly="99"
-                annual="990"
+                setupPrice={0}
+                monthly={99}
+                annual={990}
                 monthlyPaypalLink="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-9M322418LL849400TM77ASWY"
                 monthlyDescription="Start subscription"
                 annualNote=""
@@ -129,8 +129,8 @@
             <PaypalOffer
                 heading="Enterprise subscription"
                 logo="/packages/enterprise.svg"
-                setupPrice="0"
-                monthly="4000"
+                setupPrice={0}
+                monthly={4000}
                 monthlyPaypalLink="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-7PJ48337RA009662TM77ATXY"
                 monthlyDescription="Start subscription"
                 annualNote=""

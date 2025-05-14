@@ -8,7 +8,8 @@
 		opened = false,
 		icon = '',
 		id,
-		comment = 'Click to open'
+		comment = 'Click to open',
+		children
 	} = $props();
 	let openState = $state(opened);
 
@@ -39,16 +40,16 @@
 			<div class="accordion-header__text">
 				{#if !openState}
 					<div class="accordion-header__text--header {variant}">
-						<slot name="header"><h4>{header}</h4></slot>
+						<h4>{header}</h4>
 					</div>
 					<div class="accordion-header__text--comment">
 						<em>
-							<slot name="comment">{comment}</slot>
+							{comment}
 						</em>
 					</div>
 				{:else}
 					<div class="accordion-header__text--header {variant} inline">
-						<slot name="header"><h3>{openHeader}</h3></slot>
+						<h3>{openHeader}</h3>
 					</div>
 				{/if}
 			</div>
@@ -62,23 +63,18 @@
 					<path d="M7 10l5 5 5-5z" />
 				  </svg>
 				{/if}
-				<!-- <img class="down" class:turn={openState} src={downarrow} alt="down-arrow" /> -->
 			</button>
 		</div>
 		<div class="accordion-icon">
-			<slot name="icon">{icon}</slot>
+			{icon}
 		</div>
 		<div class="accordion-body {openState ? 'opened' : 'closed'}">
-			<slot />
+			{@render children()}
 		</div>
 	</div>
 </div>
 
 <style>
-	/* :host {
-		--accordion-header-background: var(--bg-brand-100);
-		--accordion-header-color: var(--bg-brand-900);
-	} */
 	.accordion-container {
 		display: block;
 		z-index: 10;

@@ -1,12 +1,7 @@
-<script>
-	// full screen background image/color with panel
-	export let colour = 'white';
-	export let image = '';
-	export let caption = '';
-	export let background = '';
-	export let header = '';
+<script lang="ts">
+	let { colour, image, caption, background, header, children } = $props();
 	// set css properties based on parameters
-	let style;
+	let style:string = $state('');
 	if (!image.length) {
 		style = `
 		background-color: ${background};
@@ -29,7 +24,7 @@
 		{#if header}
 			<div class="panel-header">{header}</div>
 		{/if}
-		<slot />
+		{@render children()}
 	</div>
 	<div class="caption">
 		{caption}

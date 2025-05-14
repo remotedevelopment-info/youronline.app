@@ -1,79 +1,26 @@
 <script>
 	import { variables } from '$lib/variables.js';
-	/**
-	 * @type {string}
-	 */
-	export let heading;
-	/**
-	 * @type {string}
-	 */
-	export let fixedPrice = 0;
-	/**
-	 * @type {string}
-	 */
-	export let setupPrice = 0;
-	/**
-	 * @type {string}
-	 */
-	export let monthly;
-	export let monthlyHosting;
-	/**
-	 * @type {string}
-	 */
-	export let annual;
-	/**
-	 * @type {string}
-	 */
-	export let annualNote;
-	/**
-	 * @type {string}
-	 */
-	export let freeCTA;
-	/**
-	 * @type {string}
-	 */
-	export let monthlyPaypalLink;
-	export let monthlyPaypalMembersLink;
-	export let trialdays;
-	/**
-	 * @type {string}
-	 */
-	export let annualPaypalLink;
-	/**
-	 * @type {string}
-	 */
-	export let monthlyDescription;
-	/**
-	 * @type {string}
-	 */
-	export let annualDescription;
-	/**
-	 * @type {string}
-	 */
-	export let planDetails;
-	/**
-	 * @type {string}
-	 */
-	export let logo;
-	/**
-	 * @type {boolean}
-	 */
-	export let disclaimer = true;
-	export let invoicing = false;
+	let { heading, fixedPrice = 0, setupPrice = 0, monthly = 0, monthlyHosting = 0, 
+		annual = 0, annualNote, freeCTA,
+		monthlyPaypalLink, monthlyPaypalMembersLink, trialdays, annualPaypalLink, 
+		monthlyDescription, annualDescription, planDetails, 
+		logo, disclaimer, invoicing } = $props();
 	
 	const vat = variables.vat.length > 0;
-
 	let includeVAT = vat ? true : false;
 
-	const monthlyVAT = vat ? parseFloat(monthly) * 1.2 : parseFloat(monthly);
-	const annualVAT = vat ? parseFloat(annual) * 1.2 : parseFloat(annual);
-	const setupPriceVAT = vat ? parseFloat(setupPrice) * 1.2 : parseFloat(setupPrice);
+	const monthlyVAT = vat ? parseFloat(String(monthly)) * 1.2 : parseFloat(String(monthly));
+	const annualVAT = vat ? parseFloat(String(annual)) * 1.2 : parseFloat(String(annual));
+	const setupPriceVAT = vat ? parseFloat(String(setupPrice)) * 1.2 : parseFloat(String(setupPrice));
 </script>
 
 <div class="panel">
 	<div class="row">
-		<div class="details centered">
-			<div class="row centered">
+		<div class="flex flex-col justify-start details">
+			<div class="flex flex-col">
+				{#if logo}
+					<img src={logo} alt={logo} class="logo" />
+				{/if}
 				<img src={logo} alt={logo} class="logo" />
 				<h3>{heading}</h3>
 			</div>
@@ -89,7 +36,7 @@
 				{/if}
 				{#if parseFloat(setupPrice) > 0}
 					<li>
-						Setup £{includeVAT ? setupPriceVAT.toFixed(2) : parseFloat(setupPrice).toFixed(2)}
+						Setup £{includeVAT ? setupPriceVAT.toFixed(2) : parseFloat(String(setupPrice)).toFixed(2)}
 					</li>
 				{/if}
 				{#if fixedPrice}
@@ -99,10 +46,10 @@
 					<li>
 						Monthly Subscription £{includeVAT
 							? monthlyVAT.toFixed(2)
-							: parseFloat(monthly).toFixed(2)}
+							: parseFloat(String(monthly)).toFixed(2)}
 					</li>
 				{/if}
-				{#if monthlyHosting && monthlyHosting !== '0'}
+				{#if monthlyHosting && monthlyHosting !== 0}
 					{#if fixedPrice}
 						<em>plus</em>
 					{:else}
@@ -112,7 +59,7 @@
 				{/if}
 				{#if monthlyPaypalMembersLink}
 					<li>
-						Monthly £{includeVAT ? monthlyVAT.toFixed(2) : parseFloat(monthly).toFixed(2)} (members)
+						Monthly £{includeVAT ? monthlyVAT.toFixed(2) : parseFloat(String(monthly)).toFixed(2)} (members)
 					</li>
 				{/if}
 				{#if trialdays}
@@ -120,7 +67,7 @@
 				{/if}
 				{#if annualPaypalLink}
 					<li>
-						Annual £{includeVAT ? annualVAT.toFixed(2) : parseFloat(annual).toFixed(2)}
+						Annual £{includeVAT ? annualVAT.toFixed(2) : parseFloat(String(annual)).toFixed(2)}
 						{annualNote}
 					</li>
 				{/if}
