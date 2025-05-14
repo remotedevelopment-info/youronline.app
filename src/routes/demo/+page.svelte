@@ -19,6 +19,11 @@
     import TestimonialCard from '$lib/Components/TestimonialCard.svelte';
     import TestimonialGrid from '$lib/Components/TestimonialGrid.svelte';
     // import VideoPlayer from '$lib/Components/VideoPlayer.svelte';
+    
+    // Component rating display helper
+    function ratingStars(rating) {
+        return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+    }
 </script>
 
 <div class="bg-brand-100 dark:bg-brand-950 m-4 p-4">
@@ -32,9 +37,10 @@
 				<p class="mb-4">Expandable accordion with customizable headers, styles, and content.</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">
-					Status: ✅ Svelte 5 Ready (Using $props, $state, $effect, and &#123;@render&#125;)
-				</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ✅ Svelte 5 Ready (Using $props, $state, $effect, and &#123;@render&#125;)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(4)} 4/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
@@ -97,6 +103,13 @@
 						<li>Includes accessibility attributes (ARIA)</li>
 						<li>Supports different visual variants</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Potential improvements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add transition animation for smoother open/close</li>
+							<li>Add programmatic control methods (open/close) for parent components</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -109,7 +122,10 @@
 				</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ✅ Svelte 5 Ready (Using $props and $state)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ✅ Svelte 5 Ready (Using $props and $state)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(3)} 3/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="relative bg-white dark:bg-brand-800 p-6 h-64">
@@ -139,6 +155,14 @@
 						<li>Browser-safe with $app/environment check</li>
 						<li>Accessible with proper aria-label</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Potential improvements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add customizable animation style options</li>
+							<li>Improve scroll offset calculation for fixed headers</li>
+							<li>Add support for custom icon/content</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -149,7 +173,10 @@
 				<p class="mb-4">Full-screen background with image or color and content panel.</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ⚠️ Needs Update (Currently using export let and slot)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ⚠️ Needs Update (Currently using export let and slot)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(2)} 2/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
@@ -182,6 +209,19 @@
 						<li>Uses dynamic style generation based on props</li>
 						<li>Responsive design with media queries</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Required improvements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Update to use $props instead of export let</li>
+							<li>Convert slot to children with &#123;@render&#125;</li>
+						</ul>
+						<h4 class="mt-2 font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add more background options (gradients, patterns)</li>
+							<li>Improve responsive behavior on very small screens</li>
+							<li>Add parallax scrolling option</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -192,7 +232,10 @@
 				<p class="mb-4">Styled container with title and customizable width variants.</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ⚠️ Needs Update (Currently using export let and slot)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ⚠️ Needs Update (Currently using export let and slot)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(2)} 2/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
@@ -238,6 +281,20 @@
 						<li>Supports multiple width variants and color schemes</li>
 						<li>Fully responsive with media queries</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Required improvements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Update to use $props</li>
+							<li>Replace direct DOM manipulation with $effect</li>
+							<li>Convert slot to children prop</li>
+						</ul>
+						<h4 class="mt-2 font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add more styling variants</li>
+							<li>Improve box shadow/border options</li>
+							<li>Add animation options for entrance/hover</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -250,7 +307,10 @@
 				</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ⚠️ Needs Update (Should use $props and children)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ⚠️ Needs Update (Should use $props and children)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(3)} 3/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
@@ -302,6 +362,20 @@
 						<li>Responsive design for different screen sizes</li>
 						<li>Optional button with customizable text and link</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Required improvements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Update to use $props</li>
+							<li>Convert slot to children prop</li>
+						</ul>
+						<h4 class="mt-2 font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add hover effects/animations</li>
+							<li>Support for multiple buttons/actions</li>
+							<li>Add card variants (horizontal, featured)</li>
+							<li>Support for badges/tags</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -315,7 +389,10 @@
 				</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ✅ Svelte 5 Ready (Using snippet syntax and $derived)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ✅ Svelte 5 Ready (Using snippet syntax and $derived)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(5)} 5/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<!-- Feature Demo -->
@@ -369,6 +446,14 @@
 						<li>Uses $derived for reactive styling</li>
 						<li>Renders content via &#123;@render&#125; statements</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add more layout variants (e.g., centered, zigzag)</li>
+							<li>Add animation options for section entrance</li>
+							<li>Improve tablet-specific layouts</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -381,7 +466,10 @@
 				</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ✅ Updated to Svelte 5 (Using $state and $effect)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ✅ Updated to Svelte 5 (Using $state and $effect)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(4)} 4/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<Footer />
@@ -396,6 +484,15 @@
 						<li>Uses $effect to update DOM when state changes</li>
 						<li>Theme switching works as before but with reactive state</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Make footer columns customizable via props</li>
+							<li>Add newsletter signup option</li>
+							<li>Support more theme variants</li>
+							<li>Add language selector integration</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -409,9 +506,10 @@
 				<p class="mb-4">Page header with navigation, mobile responsive menu, and theme toggle.</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">
-					Status: ✅ Svelte 5 Ready (Using $state, &#123;@render&#125; and snippet)
-				</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ✅ Svelte 5 Ready (Using $state, &#123;@render&#125; and snippet)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(4)} 4/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<Header
@@ -440,6 +538,15 @@
 						<li>Mobile responsive with toggle menu</li>
 						<li>Includes dark mode toggle functionality</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add sticky header option with scroll behavior</li>
+							<li>Support for mega menu dropdown</li>
+							<li>Add search integration option</li>
+							<li>Improve mobile menu animations</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -450,7 +557,10 @@
 				<p class="mb-4">Reusable icon component that renders SVG icons with customizable styles.</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ✅ Svelte 5 Ready (Using $props)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ✅ Svelte 5 Ready (Using $props)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(4)} 4/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
@@ -498,6 +608,15 @@
 						<li>Accessible with proper ARIA attributes</li>
 						<li>Extensible with ability to add new icons</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add more icon variants to the library</li>
+							<li>Support for custom icon imports</li>
+							<li>Add animation options (spin, pulse, etc.)</li>
+							<li>Add icon groups/composition</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -509,7 +628,10 @@
 				</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ⚠️ Needs Update (Should use $props)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ⚠️ Needs Update (Should use $props)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(3)} 3/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
@@ -562,6 +684,20 @@
 						<li>Accessible with proper alt text and loading attributes</li>
 						<li>Uses picture element for various target resolutions</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Required improvements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Update to use $props</li>
+							<li>Refactor image loading logic</li>
+						</ul>
+						<h4 class="mt-2 font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add loading placeholder/skeleton</li>
+							<li>Add lightbox/zoom functionality</li>
+							<li>Support for image galleries</li>
+							<li>Add blur-up effect for progressive loading</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -574,7 +710,10 @@
 				</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ⚠️ Needs Update (Should use $props and $state)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ⚠️ Needs Update (Should use $props and $state)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(3)} 3/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
@@ -642,76 +781,25 @@
 						<li>Accessible with proper labels and ARIA attributes</li>
 						<li>Supports icons, help text and error messages</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Required improvements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Update to use $props and $state</li>
+							<li>Improve validation with $derived</li>
+						</ul>
+						<h4 class="mt-2 font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add more input types (datepicker, autocomplete)</li>
+							<li>Add character count for text fields</li>
+							<li>Support for custom validation rules</li>
+							<li>Add input masks for formatted fields</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
 
-		<!-- 
-        <details>
-            <summary class="font-bold text-lg">
-                <h2 class="inline mb-2 font-bold text-2xl">PayPal Offers</h2>
-                <p class="mb-4">
-                    Payment integration components including PayPal Offer.
-                </p>
-            </summary>
-            <section class="mb-8">
-                <p class="mb-4">Status: ⚠️ Needs Update (Should use $props and $state)</p>
-        
-                <div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
-                    <div class="bg-white dark:bg-brand-800 p-6">
-                        <div class="space-y-8">
-                        
-                            <div>
-                                <h3 class="mb-4 font-bold text-xl">PayPal Offer</h3>
-                                <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-                                    <p class="mb-4 text-center">
-                                        A promotional component showing payment options and PayPal credit offers.
-                                    </p>
-                                    <div class="flex justify-center">
-                                    <PaypalOffer
-                                        heading="Basic subscription"
-                                        logo="/packages/basic.svg"
-                                        setupPrice="0"
-                                        monthly="49"
-                                        annual="490"
-                                        monthlyPaypalLink="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-396299840S993105VM77ARWA"
-                                        monthlyDescription="Start subscription"
-                                        annualNote=""
-                                        annualDescription="12 months for the price of 10 months"
-                                        annualPaypalLink=""
-                                        planDetails="Basic subscription for 1 person business, 250 prospects and customers. Includes upgrades and basic support."
-                                        disclaimer={true}
-                                        invoicing={false}
-                                    />
-                                    </div>
-                                    <p class="mt-4 text-gray-500 text-sm text-center">
-                                        Displays PayPal's promotional financing options like Pay in 4 or PayPal Credit
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-brand-200 dark:bg-brand-800 mt-4 p-4 rounded text-gray-900 dark:text-gray-100">
-                    <h3 class="mb-2 font-bold">Component Notes:</h3>
-                    <ul class="pl-5 list-disc">
-                        <li>Should use $state for payment status tracking</li>
-                        <li>Handles transaction events and status updates</li>
-                        <li>Both components support sandbox mode for testing</li>
-                    </ul>
-                    
-                    <div class="bg-brand-100 dark:bg-brand-900 mt-4 p-3 border border-brand-300 dark:border-brand-700 rounded">
-                        <h4 class="mb-2 font-bold">Implementation Notes:</h4>
-                        <ul class="pl-5 list-disc">
-                            <li>Requires client ID from PayPal Developer dashboard</li>
-                            <li>Implement proper error handling for failed transactions</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </details> 
-        -->
+		<!-- PayPal Offers section commented out -->
 
 		<details>
 			<summary class="font-bold text-lg">
@@ -719,7 +807,10 @@
 				<p class="mb-4">Pricing display components including PricingCard and PricingGrid.</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ⚠️ Needs Update (Should use $props and children)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ⚠️ Needs Update (Should use $props and children)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(3)} 3/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
@@ -862,6 +953,20 @@
 						<li>Responsive design adapts to different screen sizes</li>
 						<li>Could implement $derived for price calculations (monthly vs annual)</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Required improvements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Update to use $props</li>
+							<li>Refactor to use children with &#123;@render&#125;</li>
+						</ul>
+						<h4 class="mt-2 font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add toggle for monthly/annual pricing</li>
+							<li>Add currency formatting options</li>
+							<li>Improve mobile layout for feature comparison</li>
+							<li>Add animation for highlighted plans</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -878,7 +983,10 @@
 				</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ⚠️ Needs Update (Should use $props instead of export)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ⚠️ Needs Update (Should use $props instead of export)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(3)} 3/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
@@ -907,6 +1015,20 @@
 						<li>Implements hover effects on call-to-action button</li>
 						<li>Could use $derived for calculating savings amount</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Required improvements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Update to use $props</li>
+							<li>Use $derived for savings calculation</li>
+						</ul>
+						<h4 class="mt-2 font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add countdown timer option</li>
+							<li>Support for promotional codes</li>
+							<li>Add more design variants</li>
+							<li>Improve responsive behavior on small screens</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
@@ -919,7 +1041,10 @@
 				</p>
 			</summary>
 			<section class="mb-8">
-				<p class="mb-4">Status: ⚠️ Needs Update (Should use $props and children)</p>
+				<div class="flex justify-between items-center mb-4">
+					<p>Status: ⚠️ Needs Update (Should use $props and children)</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(3)} 3/5</p>
+				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
@@ -998,76 +1123,23 @@
 						<li>Includes accessible image alt text generation from name and company</li>
 						<li>Supports optional customer photos with fallback avatars</li>
 					</ul>
+					<div class="mt-4 pt-2 border-t border-brand-300 dark:border-brand-700">
+						<h4 class="font-semibold">Required improvements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Update to use $props</li>
+							<li>Convert slots to children prop</li>
+						</ul>
+						<h4 class="mt-2 font-semibold">Potential enhancements:</h4>
+						<ul class="pl-5 list-disc">
+							<li>Add carousel/slider option for multiple testimonials</li>
+							<li>Add animation for featured testimonials</li>
+							<li>Support for video testimonials</li>
+							<li>Improve star rating visualization</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</details>
-
-        <!-- <details>
-            <summary class="font-bold text-lg">
-                <h2 class="inline mb-2 font-bold text-2xl">VideoPlayer Component</h2>
-                <p class="mb-4">
-                    Enhanced video player with custom controls, responsive sizing, and multiple source support.
-                </p>
-            </summary>
-            <section class="mb-8">
-                <p class="mb-4">Status: ⚠️ Needs Update (Should use $props and $state)</p>
-        
-                <div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
-                    <div class="bg-white dark:bg-brand-800 p-6">
-                        <div class="space-y-8">
-
-                            <div>
-                                <h3 class="mb-4 font-bold text-xl">Standard Video Player</h3>
-                                <VideoPlayer
-                                    src="/videos/product-demo.mp4"
-                                    poster="/images/video-poster.jpg"
-                                    title="Product Demo Video"
-                                    autoplay={false}
-                                    controls={true}
-                                />
-                            </div>
-                            
-                            <div>
-                                <h3 class="mb-4 font-bold text-xl">YouTube Embed</h3>
-                                <VideoPlayer
-                                    youtubeId="dQw4w9WgXcQ"
-                                    title="YouTube Video Example"
-                                    aspectRatio="16:9"
-                                />
-                            </div>
-                            
-                            <div>
-                                <h3 class="mb-4 font-bold text-xl">Responsive Video with Multiple Sources</h3>
-                                <VideoPlayer
-                                    sources={[
-                                        { src: '/videos/promo-hd.mp4', type: 'video/mp4', media: '(min-width: 720px)' },
-                                        { src: '/videos/promo-sd.mp4', type: 'video/mp4' }
-                                    ]}
-                                    poster="/images/promo-poster.jpg"
-                                    title="Promotional Video"
-                                    controls={true}
-                                    responsive={true}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-brand-200 dark:bg-brand-800 mt-4 p-4 rounded text-gray-900 dark:text-gray-100">
-                    <h3 class="mb-2 font-bold">Component Notes:</h3>
-                    <ul class="pl-5 list-disc">
-                        <li>Should use $props for video configuration</li>
-                        <li>Should use $state for playback status and controls</li>
-                        <li>Could use $derived for calculating video dimensions</li>
-                        <li>Supports direct video files or YouTube embeds</li>
-                        <li>Handles multiple video sources for different formats/resolutions</li>
-                        <li>Responsive design with customizable aspect ratio</li>
-                        <li>Includes accessibility features (captions, transcripts)</li>
-                        <li>Custom themed controls available when controls=true</li>
-                    </ul>
-                </div>
-            </section>
-        </details> -->
 
 	</details>
 </div>
