@@ -26,7 +26,7 @@
 	}
 </script>
 
-<div class="bg-brand-100 dark:bg-brand-950 m-4 p-4">
+<div class="bg-brand-100 dark:bg-brand-950 m-0 md:m-2 lg:m-4 p-0 lg:p-4 md:p:2">
 	<h1 class="mb-4 font-bold text-3xl">Component Demo Page</h1>
 	<p class="mb-8">This page demonstrates components and their Svelte 5 compatibility.</p>
 	<details>
@@ -237,12 +237,12 @@
 					<p class="font-bold text-amber-500">Rating: {ratingStars(2)} 2/5</p>
 				</div>
 
-				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
+				<div class="border border-brand-300 dark:border-brand-900 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
 						<div class="flex flex-wrap gap-4">
 							<div class="w-full">
-								<Box title="Full Width Box" variant="full" scheme="normal">
-									<p class="mb-4 text-center">This is a full-width box with the default styling.</p>
+								<Box title="Full Width Box" variant="full" scheme="normal" rounded={20}>
+									<p class="mb-4 text-center">A full-width box with rounded corners.</p>
 									<p class="text-center">
 										It can contain any content and will take up the full available width.
 									</p>
@@ -250,8 +250,8 @@
 							</div>
 
 							<div class="w-full">
-								<Box title="Half Width Box" variant="half" scheme="inverse">
-									<p class="mb-4 text-center">This is a half-width box with inverse styling.</p>
+								<Box title="Half Width Box" variant="half">
+									<p class="mb-4 text-center">A half-width box with sharp corners.</p>
 									<p class="text-center">
 										On smaller screens, it maintains a minimum width for better readability.
 									</p>

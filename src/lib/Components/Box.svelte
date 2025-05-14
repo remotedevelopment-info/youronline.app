@@ -1,18 +1,8 @@
-<script>
-	import { browser } from '$app/environment';
-
-	let { children, title = 'Box', variant = 'full', scheme = '' } = $props();
-	if (browser) {
-		const root = document.documentElement;
-		if (variant === 'half') {
-			root?.style.setProperty('--box-width', '50%');
-		} else {
-			root?.style.setProperty('--box-width', '100%');
-		}
-	}
+<script lang="ts">
+	let { children, title = 'Box', variant = 'full', scheme = '', rounded = 0 } = $props();
 </script>
 
-<div class="box {variant} {scheme}">
+<div class="box {variant} {scheme}" style="--box-border-radius: {rounded}px; --box-width: {variant === 'half' ? '50%' : '100%'}">
 	<h2>{title}</h2>
 	{#if children}
 		{@render children()}
@@ -21,28 +11,20 @@
 
 <style>
 	h2 {
-		color: var(--light);
 		text-align: center;
 	}
 	.box {
-		box-sizing: border-box;
-		color: var(--light);
-		box-shadow: 2px 0 2px rgba(0, 0, 0, 0.3);
-		background: var(--medium);
-		color: var(--white);
-		padding: 1rem;
-		margin: 3rem auto;
-		border-radius: 20px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-	}
-	.box.inverse {
-		background: var(--white);
-		color: var(--cta);
-	}
-	.box.inverse h2 {
-		color: var(--cta);
+		box-sizing: border-box;
+		box-shadow: 2px 0 2px rgba(0, 0, 0, 0.3);
+		border-radius: var(--box-border-radius, 20px);
+		background: rgb(var(--brand-600));
+		color: rgb(var(--brand-200));
+		margin: 3rem auto;
+		padding: 1rem;
+		min-width: 300px;
 	}
 	.box.full {
 		width: 100%;
