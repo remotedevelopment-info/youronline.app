@@ -16,14 +16,14 @@
 	import PricingGrid from '$lib/Components/PricingGrid.svelte';
 
 	import SpecialOffer from '$lib/Components/SpecialOffer.svelte';
-    import TestimonialCard from '$lib/Components/TestimonialCard.svelte';
-    import TestimonialGrid from '$lib/Components/TestimonialGrid.svelte';
-    // import VideoPlayer from '$lib/Components/VideoPlayer.svelte';
-    
-    // Component rating display helper
-    function ratingStars(rating) {
-        return '★'.repeat(rating) + '☆'.repeat(5 - rating);
-    }
+	import TestimonialCard from '$lib/Components/TestimonialCard.svelte';
+	import TestimonialGrid from '$lib/Components/TestimonialGrid.svelte';
+	// import VideoPlayer from '$lib/Components/VideoPlayer.svelte';
+
+	// Component rating display helper
+	function ratingStars(rating) {
+		return '★'.repeat(rating) + '☆'.repeat(5 - rating);
+	}
 </script>
 
 <div class="bg-brand-100 dark:bg-brand-950 m-4 p-4">
@@ -353,7 +353,8 @@
 				</div>
 
 				<div
-					class="bg-brand-200 dark:bg-brand-800 mt-4 p-4 rounded text-gray-900 dark:text-gray-100"				>
+					class="bg-brand-200 dark:bg-brand-800 mt-4 p-4 rounded text-gray-900 dark:text-gray-100"
+				>
 					<h3 class="mb-2 font-bold">Component Notes:</h3>
 					<ul class="pl-5 list-disc">
 						<li>Needs to be updated to use $props for component properties</li>
@@ -559,15 +560,18 @@
 			<section class="mb-8">
 				<div class="flex justify-between items-center mb-4">
 					<p>Status: ✅ Svelte 5 Ready (Using $props)</p>
-					<p class="font-bold text-amber-500">Rating: {ratingStars(4)} 4/5</p>
+					<p class="font-bold text-amber-500">Rating: {ratingStars(3)} 4/5</p>
 				</div>
 
 				<div class="border border-brand-300 dark:border-brand-700 rounded-lg overflow-hidden">
 					<div class="bg-white dark:bg-brand-800 p-6">
 						<div class="flex flex-wrap justify-center gap-8">
-							<!-- Common Icons -->
 							<div class="flex flex-col items-center">
-								<Icon name="user" />
+								<Icon name="home" />
+								<span class="mt-2 text-sm">home</span>
+							</div>
+							<div class="flex flex-col items-center">
+								<Icon name="user" size="32" />
 								<span class="mt-2 text-sm">user</span>
 							</div>
 							<div class="flex flex-col items-center">
@@ -575,22 +579,22 @@
 								<span class="mt-2 text-sm">settings</span>
 							</div>
 							<div class="flex flex-col items-center">
-								<Icon name="home" />
-								<span class="mt-2 text-sm">home</span>
+								<Icon name="check" class="inline-block mr-2" />
+								<span class="mt-2 text-sm">check</span>
 							</div>
 							<div class="flex flex-col items-center">
 								<Icon name="notification" />
 								<span class="mt-2 text-sm">notification</span>
 							</div>
 
-							<!-- Color and Size Variations -->
 							<div class="flex flex-col items-center">
-								<Icon name="search" color="var(--brand-600)" />
-								<span class="mt-2 text-sm">Custom Color</span>
+								<Icon name="warning" color="#f59e0b" />
+								<span class="mt-2 text-sm">warning</span>
 							</div>
+
 							<div class="flex flex-col items-center">
-								<Icon name="calendar" size="36" />
-								<span class="mt-2 text-sm">Custom Size</span>
+								<Icon name="info" title="Information" />
+								<span class="mt-2 text-sm">info</span>
 							</div>
 						</div>
 					</div>
@@ -752,6 +756,15 @@
 									required={true}
 									showPasswordToggle={true}
 								/>
+								<Input
+									label="Password"
+									type="password"
+									id="password"
+									showPasswordToggle={true}
+									icon="lock"
+									helpText="Must be at least 8 characters"
+									full={true}
+								/>
 							</div>
 
 							<!-- Input with Icon and Help Text -->
@@ -764,6 +777,11 @@
 									icon="search"
 									helpText="Enter keywords to search our knowledge base"
 								/>
+							</div>
+							<div>
+								<Input type="text" id="username" placeholder="Enter username" required />
+
+								<!-- With enhancements -->
 							</div>
 						</div>
 					</div>
@@ -1140,6 +1158,5 @@
 				</div>
 			</section>
 		</details>
-
 	</details>
 </div>
