@@ -30,7 +30,7 @@
 	<h1 class="mb-4 font-bold text-3xl">Component Demo Page</h1>
 	<p class="mb-8">This page demonstrates components and their Svelte 5 compatibility.</p>
 	<details>
-		<summary>A - F</summary>
+		<summary>A - E</summary>
 		<details>
 			<summary class="font-bold text-lg">
 				<h2 class="inline mb-2 font-bold text-2xl">Accordion Component</h2>
@@ -380,6 +380,9 @@
 				</div>
 			</section>
 		</details>
+	</details>
+	<details>
+		<summary>F - P</summary>
 
 		<details>
 			<summary class="font-bold text-lg"
@@ -497,10 +500,7 @@
 				</div>
 			</section>
 		</details>
-	</details>
 
-	<details>
-		<summary>G - P</summary>
 		<details>
 			<summary class="font-bold text-lg">
 				<h2 class="inline mb-2 font-bold text-2xl">Header Component</h2>
@@ -715,7 +715,6 @@
 			</summary>
 			<section class="mb-8">
 				<div class="flex justify-between items-center mb-4">
-					<p>Status: ⚠️ Needs Update (Should use $props and $state)</p>
 					<p class="font-bold text-amber-500">Rating: {ratingStars(3)} 3/5</p>
 				</div>
 
@@ -816,8 +815,6 @@
 				</div>
 			</section>
 		</details>
-
-		<!-- PayPal Offers section commented out -->
 
 		<details>
 			<summary class="font-bold text-lg">
