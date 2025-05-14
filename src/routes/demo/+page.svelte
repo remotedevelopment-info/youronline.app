@@ -11,7 +11,7 @@
 	import Icon from '$lib/Components/Icon.svelte';
 	import Image from '$lib/Components/Image.svelte';
 	import Input from '$lib/Components/Input.svelte';
-	// import PaypalOffer from '$lib/Components/PaypalOffer.svelte';
+
 	import PricingCard from '$lib/Components/PricingCard.svelte';
 	import PricingGrid from '$lib/Components/PricingGrid.svelte';
 
