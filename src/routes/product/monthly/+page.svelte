@@ -4,7 +4,7 @@
 	import { pricingPlans, serviceDetails } from '$lib/data/pricing.js';
 
 	// Get the monthly plan and its details
-	const plan = pricingPlans.find((p) => p.title === 'Continuous Development Partnership');
+	const plan = pricingPlans.find(p => p.period === "month");
 	const details = serviceDetails.monthly;
 </script>
 

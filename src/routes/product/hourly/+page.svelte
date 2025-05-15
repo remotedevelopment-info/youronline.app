@@ -4,7 +4,7 @@
 	import { pricingPlans, serviceDetails } from '$lib/data/pricing.js';
 
 	// Get the hourly plan and its details
-	const plan = pricingPlans.find((p) => p.title === 'On-Demand Expertise');
+	const plan = pricingPlans.find(p => p.period === "hourly");
 	const details = serviceDetails.hourly;
 </script>
 

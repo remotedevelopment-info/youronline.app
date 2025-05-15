@@ -4,7 +4,7 @@
 	import { pricingPlans, serviceDetails } from '$lib/data/pricing.js';
 	
 	// Get the weekly plan and its details
-	const plan = pricingPlans.find(p => p.title === "Weekly Development Sprints");
+	const plan = pricingPlans.find(p => p.period === "week");
 	const details = serviceDetails.weekly;
 </script>
 
