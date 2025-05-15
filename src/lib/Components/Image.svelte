@@ -16,6 +16,7 @@
      * @property {LoadingStrategy} [loading='lazy'] - Image loading strategy
      * @property {string} [className] - Additional CSS classes
      * @property {boolean} [hasDensityVersions=false] - Whether image has density variants
+     * @property {string} caption - Caption for the image
      */
 
     /** @type {ImageProps} */
@@ -27,7 +28,8 @@
         fit = 'responsive',
         loading = 'lazy',
         className = '',
-        hasDensityVersions = false
+        hasDensityVersions = false,
+        caption = ''
     } = $props();
 
     /** @type {boolean} */
@@ -180,10 +182,10 @@
     {/if}
 
     {#if imageState === 'error'}
-        <div class="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-800">
-            <div class="text-center p-4">
+        <div class="absolute inset-0 flex justify-center items-center bg-gray-100 dark:bg-gray-800">
+            <div class="p-4 text-center">
                 <svg 
-                    class="w-12 h-12 mx-auto text-gray-400 dark:text-gray-600" 
+                    class="mx-auto w-12 h-12 text-gray-400 dark:text-gray-600" 
                     fill="none" 
                     viewBox="0 0 24 24" 
                     stroke="currentColor"
@@ -195,10 +197,15 @@
                         d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
                     />
                 </svg>
-                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                <p class="mt-2 text-gray-500 dark:text-gray-400 text-sm">
                     Failed to load image
                 </p>
             </div>
         </div>
+    {/if}
+    {#if caption}
+        <figcaption class="mt-2 text-gray-500 dark:text-gray-400 text-sm">
+            {caption}
+        </figcaption>
     {/if}
 </div>

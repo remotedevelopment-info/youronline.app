@@ -21,7 +21,7 @@
 		class="relative bottom-1 left-1/2 -translate-x-1/2 opacity-80 transition-all
        duration-300 hover:opacity-100 text-black dark:text-white
        {hasScrolled ? 'opacity-0' : ''}"
-		on:click={scrollToNext}
+		onclick={scrollToNext}
 		aria-label="Scroll to next section"
 	>
 		<div class="p-3 border border-4 dark:border-white border-black rounded-full animate-bounce">

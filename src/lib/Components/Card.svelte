@@ -1,34 +1,33 @@
 <script>
     import { goto } from '$app/navigation';
-	import Icon from '$lib/Icon.svelte';
-    export let icon = '';
-    export let url = ''
-	export let background = ''
-
+	import Icon from '$lib/Components/Icon.svelte';
+	let { children, title, subheading, icon, image = '', alt='', url, background, buttonText = '' } = $props();
 </script>
 
 <div class="card" style={background ? 'background: '+background : ''}>
-	<div class="topline">
+	<div class="topline flex-col flex-shrink">
 		<div class="icon">
 			<Icon name="{icon}" />
 		</div>
-		<slot name="image" />
+
+		{#if image}
+			<img class="card-image" src="{image}" alt={alt ?? {image}} />
+		{/if}
 	</div>
 		<div class="heading">
 			<p class="main-heading">
-				<slot name="heading" />
+				{title}
 			</p>
 			<p class="subheading">
-				<slot name="subheading" />
+				{subheading}
 			</p>
 		</div>
 		
 	<div class="body">
-		
-		<slot />
+		{@render children()}
 	</div>
 	<div class="cta">
-		<button on:click={() => goto(url)} class="forward-arrow minimal plain"> Learn More &rAarr; </button>
+		<button onclick={() => goto(url)} class="forward-arrow minimal plain"> {buttonText ?? 'Learn More &rAarr;'}' </button>
 	</div>
 </div>
 <style>

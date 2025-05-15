@@ -1,74 +1,140 @@
 export const pricingPlans = [
     {
-        title: "FREE WEBSITE with HOSTING PLAN",
-        link: "/product/free",
-        price: 49,
+        title: "On-Demand Expertise as you need it",
+        link: "/product/hourly",
+        price: 125,
+        period: "hour",
+        description: "Expert assistance when you need it most. Perfect for targeted problems and team training.",
         features: [
-            { name: "Your Website will be built for FREE", included: true },
-            { name: "Choose your colour scheme", included: true },
-            { name: "No technical knowledge", included: true },
-            { name: "Start with five basic pages", included: true },
-            { name: "Add a page each month", included: true },
-            { name: "Unlimited articles", included: true },
-            { name: "Email support", included: true },
-            { name: "Continuous Improvement", included: true },
-            { name: "Instant analytics", included: false },
-            { name: "Website Integration", included: false },
-            { name: "API connection to Cadence-CRM (get customers)", included: false },
-            { name: "API connection to Cadence-CMS (publishing content)", included: false },
+            { name: "WhatsApp support", included: true },
+            { name: "Priority attention", included: true },
+            { name: "Rapid response times", included: true },
+            { name: "No long-term commitment", included: true },
+            { name: "Knowledge transfer to your team", included: true },
+            { name: "AI-accelerated frontend programming", included: true },
+            { name: "Expert consultation and implementation", included: true },
+            { name: "Backend system development", included: false },
+            { name: "Continuous development", included: false },
+            { name: "AI Agent development", included: false },
+            { name: "Hosting and infrastructure", included: false },
+            { name: "Team training on AI development", included: false },
         ],
-        paypalId: "basic-paypal-btn"
+        paypalId: "hourly-expertise-btn"
     },
     {
-        title: "Professional Website with CRM Integration",
-        link: "/product/professional",
-        disclaimer: true,
-        price: 97,
+        title: "Rapid Development Sprints",
+        link: "/product/weekly",
+        price: 2500,
+        period: "week",
         isPopular: true,
+        description: `Focused development blocks with rapid iteration. 
+            Ideal for websites builds, integrations, 
+            features and product customisation.`,
         features: [
-            { name: "Website with Sales Funnel Integration", included: true },
-            { name: "Chose your colour scheme", included: true },
-            { name: "Additional team members", included: true },
-            { name: "Continuous Improvement", included: true },
-            { name: "Instant analytics", included: true },
-            { name: "Unlimited articles", included: true },
-            { name: "Email support", included: true },
-            { name: "SEO ready", included: true },
-            { name: "API access", included: true },
-            { name: "Clean Code", included: true },
-            { name: "SEO Ready", included: true },
-            { name: "Website Integration", included: true },
-            { name: "API connection to Cadence-CRM", included: true },
-            { name: "API connection to Cadence-CMS", included: true },
-            { name: "Build your custom online application", included: false },
-            { name: "Software Development Team", included: false }
+            { name: "WhatsApp support", included: true },
+            { name: "Frontend/UI development", included: true },
+            { name: "CMS site integration option", included: true },
+            { name: "Weekly planning and review sessions", included: true },
+            { name: "Daily standup meetings available", included: true },
+            { name: "Team training/documentation", included: true },
+            { name: "Staging environment with subdomain", included: true },
+            { name: "Product strategy consultation", included: true },
+            { name: "AI Agent setup and configuration", included: true },
+            { name: "Continuous deployment to staging", included: true },
+            { name: "API development and integration", included: true },
+            { name: "Dedicated weekly development blocks", included: true },
+            { name: "Production Hosting", included: false },
+            { name: "Progress dashboard access", included: false },
+            { name: "Backend system architecture", included: false },
+            { name: "Enterprise infrastructure", included: false },
+            { name: "Custom AI Agent development", included: false },
         ],
-        paypalId: "premium-paypal-btn"
+        paypalId: "weekly-sprint-btn"
     },
     {
-        title: "Enterprise Development",
-        link: "/product/enterprise",
-        price: 4000,
+        title: "Fullstack Development and Engineering",
+        link: "/product/monthly",
+        price: 8000,
+        period: "month",
+        description: `Your dedicated development team. 
+            For complex products and enterprise solutions.`,
         features: [
-            { name: "Build your custom online application", included: true },
-            { name: "Software Development team", included: true },
-            { name: "Productized Service", included: true },
-            { name: "Custom Development", included: true },
-            { name: "Fixed Monthly Fee", included: true },
-            { name: "Predictable Cost", included: true },
-            { name: "Agile/Scrum or 37signals methodology ", included: true },
-            { name: "Continuous Improvement", included: true },
-            { name: "Clean Modular Design", included: true },
-            { name: "Cloud hosted servers", included: true },
-            { name: "Private/public github repository", included: true },
-            { name: "Automated Testing", included: true },
-            { name: "Automated Deployment", included: true },
-            { name: "Automated Backups", included: true },
-            { name: "Webserver Scaling", included: true },
-            { name: "API Integrations", included: true },
-            { name: "AI Integration", included: true },
-            { name: "AI Phone Sales or Support Integration", included: true },
+            { name: "On-call support", included: true },
+            { name: "WhatsApp access for users", included: true },
+            { name: "CMS site integration option", included: true },
+            { name: "Enterprise infrastructure", included: true },
+            { name: "Custom AI Agent development", included: true },
+            { name: "Backend system architecture", included: true },
+            { name: "Knowledge transfer sessions", included: true },
+            { name: "Dedicated development team", included: true },
+            { name: "Team training/documentation", included: true },
+            { name: "Progress dashboard access", included: true },
+            { name: "System architecture and planning", included: true },
+            { name: "API development and integration", included: true },
+            { name: "Product strategy consultation", included: true },
+            { name: "Daily standups and weekly reviews", included: true },
+            { name: "Continuous deployment to staging", included: true },
+            { name: "Full backend/frontend development", included: true },
+            { name: "AI Development Strategy and Team Training", included: true },
+            { name: "Production Hosting Software Engineering", included: true },
+            { name: "Product integrations with customisation", included: true },
+            { name: "Rapid progress credit for unused time", included: true },
+            { name: "Enterprise hosting planning and implementation", included: true },
         ],
-        paypalId: "enterprise-paypal-btn"
+        paypalId: "monthly-partnership-btn"
     }
 ];
+
+export const serviceDetails = {
+    hourly: {
+        title: "On-Demand Expertise",
+        subtitle: "Expert assistance when you need it most",
+        description: "Get immediate access to our team of AI-assisted development experts without committing to a long-term contract. Perfect for solving specific challenges, training your team, or getting unstuck on technical problems.",
+        useCases: [
+            "Solve complex technical problems",
+            "Train your team on AI-assisted development",
+            "Code reviews and architecture consultation",
+            "Emergency technical support"
+        ],
+        process: [
+            "Book a time slot through our calendar",
+            "We'll confirm and send a meeting link",
+            "Work directly with our experts via screen sharing",
+            "Receive follow-up documentation of solutions"
+        ]
+    },
+    weekly: {
+        title: "Weekly Development Sprints",
+        subtitle: "Focused development with measurable progress",
+        description: "Dedicated weekly development sprints that deliver tangible results. We handle the hosting, provide a staging environment, and meet daily to ensure rapid progress on your priorities.",
+        useCases: [
+            "Build new features for your product",
+            "Create an MVP for your startup",
+            "Implement AI capabilities in your application",
+            "Overhaul existing websites and applications"
+        ],
+        process: [
+            "Monday planning session to set weekly goals",
+            "Daily standups to track progress",
+            "Continuous deployment to your staging environment",
+            "Friday demo and planning for next week"
+        ]
+    },
+    monthly: {
+        title: "Continuous Development Partnership",
+        subtitle: "Your dedicated technical team",
+        description: "A full-service development partnership for businesses that need ongoing technical expertise. We become an extension of your team, handling everything from architecture to implementation while training your internal resources.",
+        useCases: [
+            "Build complex products and platforms",
+            "Serve as technical co-founders for startups",
+            "Implement enterprise-grade solutions",
+            "Develop and maintain custom AI systems"
+        ],
+        process: [
+            "Initial discovery and architecture planning",
+            "Dedicated team assignment",
+            "Daily standups and weekly reviews",
+            "Monthly strategy sessions and roadmap updates"
+        ]
+    }
+};

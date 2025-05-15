@@ -4,6 +4,11 @@
 	import { goto } from '$app/navigation';
 	import { browser } from '$app/environment';
 
+	/** @typedef {Object} NavItem
+	 * @property {string} href
+	 * @property {string} text
+	 */
+
 	/** @typedef {Object} CTAButton
 	 * @property {string} href
 	 * @property {string} text
@@ -12,7 +17,7 @@
 
 	/** @typedef {Object} HeaderProps
 	 * @property {Object} children
-	 * @property {Object[]} navItems
+	 * @property {NavItem[]} navItems
 	 * @property {string} [background]
 	 * @property {string} [colour]
 	 */
@@ -24,7 +29,6 @@
 	let logo = $state('/logo.avif');
 	let isDark = $state(false);
 	let isMenuOpen = $state(false);
-
 
 	/** @type {CTAButton[]} */
 	const ctaButtons = $state([
@@ -190,16 +194,20 @@
 </div>
 
 <style>
-	/* You can move these styles to your $lib/styles.css if preferred */
-
 	.logo {
-		width: 140px;
+		width: auto;
 		height: 160px;
+		min-width: 220px;
 	}
 	@media (min-width: 768px) {
 		.logo {
-			width: 100px;
-			height: 120px;
+			width: auto;
+			height: 180px;
+			min-width: 240px;
 		}
+	}
+	.mobile-nav {
+		@apply md:hidden block left-0 z-10 absolute bg-brand-900 w-full;
+		top: 175px;
 	}
 </style>
